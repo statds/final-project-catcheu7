@@ -27,3 +27,5 @@ For sugar intake, we will infer based on glucose levels self-reported to CDC. Ho
 # Methods
 
 I will split the project into two methods. The first is to visualize the rates of diabetes and obesity in a map. The second is a linear regression which will observe if obesity is a significant risk factor for diabetes.
+
+The states are split into several regions. These are Northeast, South, Midwest, and West. For this project, Alaska and Hawaii are western states.
