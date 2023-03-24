@@ -37,6 +37,6 @@ The states are split into several regions. These are Northeast, South, Midwest, 
 
 # Discussion
 
-The visualization will provide a quick glance at whether there are hot spots in the country which would validate the first question. In addition, it can also quickly provide whether there appears to be a correlation between obesity and diabetes rates.
+Two ways of verifying obesity and diabetes rates can be found through the methods described above. The visualization provides a time-lapse into obesity and diabetes rates so that hot spots can be quickly discovered and the correlation could be more easily inferred.
 
-The linear regression will provide a more concrete answer of whether obesity is significant to the rate of diabetes.
+The linear regression will provide a more concrete answer in whether obesity is significant to diabetes rates as well as looking into the other variables for significance.
