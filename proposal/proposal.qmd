@@ -6,8 +6,9 @@ date: March 24, 2023
 
 # Introduction
 
-Diabetes is a leading cause of deaths in the United States (source). Studies such as one performed by Liu et al. have tried to model whether certain factors such as obesity can increase the chance of developing diabetes.
-Diabetes is not homogenously distributed, however. There are reports that some demographics may have higher rates of diabetes than others.
+Diabetes in the United States is widespread, but it may not be evenly distributed across the country. The Center of Disease Control and Prevention has graphed out some trends of diabetes in the states and there may be pockets where diabetes may be more common than in others.
+Liu et al. have modelled factors such as obesity against patients to see if there is correlation between factors and diabetes rates. These include linear regression which will be used later in this proposal.
+Understanding how the factors and geography intertwine against diabetes rates can provide a better understanding of the social structure and behaviors in the United States and can help develop policies to reduce the rates.
 
 # Aims
 
