@@ -6,7 +6,8 @@ date: March 24, 2023
 
 # Introduction
 
-Diabetes is a leading cause of deaths in the United States (source).
+Diabetes is a leading cause of deaths in the United States (source). Studies such as one performed by Liu et al. have tried to model whether certain factors such as obesity can increase the chance of developing diabetes.
+Diabetes is not homogenously distributed, however. There are reports that some demographics may have higher rates of diabetes than others.
 
 # Aims
 
