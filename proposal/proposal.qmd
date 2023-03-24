@@ -27,6 +27,8 @@ The data spans from 2000 to 2020, but we will only look at the 50 states so the 
 
 For sugar intake, we will infer based on glucose levels self-reported to CDC. However, we can only use up to 2019 as the data may have been limited by the pandemic.
 
+The CDC also provides the incidence rates for four ethnic groups. These are Hispanic, non-Hispanic White, non-Hispanic Black, and non-Hispanic Asians.
+
 # Methods
 
 I will split the project into two methods. The first is to visualize the rates of diabetes and obesity in a map. The second is a linear regression which will observe if obesity is a significant risk factor for diabetes.
