@@ -8,6 +8,15 @@ date: March 24, 2023
 
 Diabetes is a leading cause of deaths in the United States (source).
 
+# Aims
+
+The overarching question for this proposal is: What are the risk factors affecting diabetes in the United States?
+
+This will be broken into two parts:
+
+1. How is diabetes affected across the states?
+2. Is obesity a significant risk factor?
+
 # Data
 
 All incident rates for diabetes is at the state level from the Center of Disease Control (CDC). This is yearly data and also can have risk factors such as obesity.
