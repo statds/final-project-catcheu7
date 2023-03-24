@@ -3,3 +3,12 @@ title: Proposal: Diabetes and its Factors
 author: Catherine Cheu
 date: March 24, 2023
 ---
+
+# Introduction
+
+Diabetes is a leading cause of deaths in the United States (source).
+
+# Data
+
+All incident rates for diabetes is at the state level from the Center of Disease Control (CDC). This is yearly data and also can have risk factors such as obesity.
+However, some missing data is present in other risk factors such as high glucose tests.
