@@ -34,3 +34,9 @@ The CDC also provides the incidence rates for four ethnic groups. These are Hisp
 I will split the project into two methods. The first is to visualize the rates of diabetes and obesity in a map. The second is a linear regression which will observe if obesity is a significant risk factor for diabetes.
 
 The states are split into several regions. These are Northeast, South, Midwest, and West. For this project, Alaska and Hawaii are western states.
+
+# Discussion
+
+The visualization will provide a quick glance at whether there are hot spots in the country which would validate the first question. In addition, it can also quickly provide whether there appears to be a correlation between obesity and diabetes rates.
+
+The linear regression will provide a more concrete answer of whether obesity is significant to the rate of diabetes.
