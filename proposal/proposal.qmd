@@ -6,9 +6,9 @@ date: March 24, 2023
 
 # Introduction
 
-Diabetes in the United States is widespread, but it may not be evenly distributed across the country. The Center of Disease Control and Prevention has graphed out some trends of diabetes in the states and there may be pockets where diabetes may be more common than in others.
-Liu et al. have modelled factors such as obesity against patients to see if there is correlation between factors and diabetes rates. These include linear regression which will be used later in this proposal.
-Understanding how the factors and geography intertwine against diabetes rates can provide a better understanding of the social structure and behaviors in the United States and can help develop policies to reduce the rates.
+Diabetes is widespread in the United States, but the Center of Disease Control and Prevention mapped out that there may be states that have higher incident rates than others.
+Studies such as one done in 2019 by Liu et al. have modelled risk factors such as obesity against samples of patients to see if there is a correlation between the factors and the rates.
+However, a state's demographics could amplify risk factors that can increase the rates of diabetes in the state. Understanding how interactions between demographic and risk factors can better prepare policies that can help mitigate and prevent diabetes from rising in the country.
 
 # Aims
 
