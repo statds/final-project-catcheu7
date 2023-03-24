@@ -20,4 +20,10 @@ This will be broken into two parts:
 # Data
 
 All incident rates for diabetes is at the state level from the Center of Disease Control (CDC). This is yearly data and also can have risk factors such as obesity.
-However, some missing data is present in other risk factors such as high glucose tests. The data spans from 2000 to 2020, but we will only look at the 50 states so the 3 territories will not be used.
+The data spans from 2000 to 2020, but we will only look at the 50 states so the 3 territories will not be used.
+
+For sugar intake, we will infer based on glucose levels self-reported to CDC. However, we can only use up to 2019 as the data may have been limited by the pandemic.
+
+# Methods
+
+I will split the project into two methods. The first is to visualize the rates of diabetes and obesity in a map. The second is a linear regression which will observe if obesity is a significant risk factor for diabetes.
