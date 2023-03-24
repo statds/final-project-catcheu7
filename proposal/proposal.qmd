@@ -15,7 +15,10 @@ The overarching question for this proposal is: What are the risk factors affecti
 This will be broken into two parts:
 
 1. How is diabetes affected across the states?
+
 2. Is obesity a significant risk factor?
+
+While it is known that excess sugar can cause diabetes, obesity may also play a role in incidence.
 
 # Data
 
