@@ -56,6 +56,6 @@ I would like to compare two states with similar diabetes rates but different dem
 
 # References
 
-1. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk opf diabetes. BMC Endocrine Disorders. 19.
+1. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk of diabetes. BMC Endocrine Disorders. 19.
 
 2. CDC Diabetes Data. https://gis.cdc.gov/grasp/diabetes/diabetesatlas-surveillance.html#
