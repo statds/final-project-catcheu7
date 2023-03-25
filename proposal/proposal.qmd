@@ -45,7 +45,7 @@ Linear regression will then use diabetes rate as response variable and obesity a
 
 Two ways of verifying obesity and diabetes rates can be found through the methods described above. The visualization provides a time-lapse into obesity and diabetes rates so that hot spots can be quickly discovered and the correlation could be more easily inferred.
 
-The linear regression will provide a more concrete answer in whether obesity is significant to diabetes rates as well as looking into the other variables for significance.
+The linear regression will provide a more concrete answer in whether obesity is significant to diabetes rates as well as looking into the other variables for significance. I would also try to obtain relative amounts of how significant each variable is to see whether demographics could change the significance of obesity across the country.
 
 The results should corroborate with Liu et al. in that obesity should be a significant risk factor for diabetes rate. However, I would like to see if this is true for all years. Future regressions may have one year at a time in order to see how the significance changes over time.
 
