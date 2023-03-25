@@ -12,7 +12,7 @@ A state's demographics could amplify risk factors which can increase the rates o
 
 # Aims
 
-The overarching question for this proposal is: What are the risk factors affecting diabetes in the United States?
+The overarching question for this proposal is: How the demographics and the risk factors affecting diabetes in the United States?
 
 This will be broken into two parts:
 
@@ -25,7 +25,7 @@ While sugar is a major factor in diabetes, obesity could also produce co-morbid 
 # Data
 
 All incident rates for diabetes is at the state level from the Center of Disease Control and Prevention (CDC). This is yearly data and also can have risk factors such as obesity.
-The data spans from 2000 to 2020, but we will only look at the 50 states so the 3 territories will not be used.
+The data spans from 2000 to 2020, but we will only look at data before 2019. In addition, we will only look for the 50 states so the 3 territories will not be used.
 
 For sugar intake, we will infer based on glucose levels self-reported to CDC. However, we can only use up to 2019 as the data may have been limited by the pandemic.
 
