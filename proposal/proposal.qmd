@@ -35,6 +35,8 @@ The CDC also provides the incidence rates for four ethnic groups. These are Hisp
 
 I will split the project into two methods. The first is to visualize the rates of diabetes and obesity in a map. The second is a linear regression which will observe if obesity is a significant risk factor for diabetes.
 
+Visualizations are animations of the United States map for all 50 states using geopandas and the animation library in matplotlib. Color coding will be used for each of the factors and data animated will be from 2000 to 2018.
+
 The states are split into several regions. These are Northeast, South, Midwest, and West. For this project, Alaska and Hawaii are western states.
 
 # Discussion
