@@ -35,9 +35,9 @@ The CDC also provides the incidence rates for four ethnic groups. These are Hisp
 
 I will split the project into two methods. The first is to visualize the rates of diabetes and obesity in a map. The second is a linear regression which will observe if obesity is a significant risk factor for diabetes.
 
-Matplotlib and geopandas will be used to animate the yearly maps of the United States via color coding for each of the variables in analysis. 2000 - 2018 data will be used.
+Matplotlib and geopandas will be used to animate the yearly maps of the United States via color coding for each of the variables in analysis. 2000 - 2018 data will be used for the maps.
 
-Categorical variables include the ethnic groups and states. The ethnic groups will have dummy variables for the regression to use. The states are split into several regions. These are Northeast, South, Midwest, and West. For this project, Alaska and Hawaii are western states.
+For regresssion, the states are split into several regions. These are Northeast, South, Midwest, and West. For this project, Alaska and Hawaii are western states.
 
 Linear regression will then use diabetes rate as response variable and obesity and ethnic group composition as the quantitative variables. A table for p-values will be given as results to show whether obesity or any other variable was significant in diabetes rate.
 
