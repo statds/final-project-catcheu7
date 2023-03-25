@@ -56,4 +56,4 @@ I would like to compare two states with similar diabetes rates but different dem
 
 # References
 
-1. Liu, S. Gao, Y., Shen, Y., Zhang, M., Li, J., Sun, P. Application of three statistical models for predicting the risk of diabetes. BMC Endocrine Disorders. 19. (2019)
+1. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk opf diabetes. BMC Endocrine Disorders. 19.
