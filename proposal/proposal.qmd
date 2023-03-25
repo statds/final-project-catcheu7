@@ -53,3 +53,7 @@ The results should corroborate with Liu et al. in that obesity should be a signi
 
 We have two methods presented which show how obesity could be correlated to diabetes. The evolution of obesity and diabetes in the United States can provide an interesting picture of how people could change in the country.
 I would like to compare two states with similar diabetes rates but different demographics and observe to see if obesity plays a role. However, maps will have to be produced to see any possible pairings.
+
+# References
+
+1. Liu, S. Gao, Y., Shen, Y., Zhang, M., Li, J., Sun, P. Application of three statistical models for predicting the risk of diabetes. BMC Endocrine Disorders. 19. (2019)
