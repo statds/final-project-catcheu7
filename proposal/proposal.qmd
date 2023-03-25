@@ -7,7 +7,7 @@ date: March 24, 2023
 # Introduction
 
 Diabetes is widespread in the United States, but the Center of Disease Control and Prevention mapped out that there may be states that have higher incident rates than others.
-Studies such as one done in 2019 by Liu et al. have modelled risk factors such as obesity against samples of patients to see if there is a correlation between the factors and the rates.
+Studies such as one done in 2019 by Liu et al. modelled risk factors such as obesity of patients to see if there is a correlation between the factors and the rates.
 However, a state's demographics could amplify risk factors that can increase the rates of diabetes in the state. Understanding how interactions between demographic and risk factors can better prepare policies that can help mitigate and prevent diabetes from rising in the country.
 
 # Aims
@@ -24,7 +24,7 @@ While sugar is a major factor in diabetes, obesity could also produce co-morbid 
 
 # Data
 
-All incident rates for diabetes is at the state level from the Center of Disease Control (CDC). This is yearly data and also can have risk factors such as obesity.
+All incident rates for diabetes is at the state level from the Center of Disease Control and Prevention (CDC). This is yearly data and also can have risk factors such as obesity.
 The data spans from 2000 to 2020, but we will only look at the 50 states so the 3 territories will not be used.
 
 For sugar intake, we will infer based on glucose levels self-reported to CDC. However, we can only use up to 2019 as the data may have been limited by the pandemic.
