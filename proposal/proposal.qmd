@@ -7,8 +7,8 @@ date: March 24, 2023
 # Introduction
 
 Diabetes is widespread in the United States, but the Center of Disease Control and Prevention mapped out that there may be states that have higher incident rates than others.
-Studies such as one done in 2019 by Liu et al. modelled risk factors such as obesity of patients to correlate between the factors and the rates.
-However, a state's demographics could amplify risk factors that can increase the rates of diabetes in the state. Understanding how interactions between demographic and risk factors can better prepare policies that can help mitigate and prevent diabetes from rising in the country.
+Studies such as one done in 2019 by Liu et al. modelled risk factors such as obesity of patients to correlate the factors and the rates.
+However, a state's demographics could amplify risk factors to increase the rates of diabetes. Understanding how interactions between demographic and risk factors can better prepare policies that can help mitigate and prevent diabetes from rising in the country.
 
 # Aims
 
