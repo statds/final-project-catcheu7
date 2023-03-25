@@ -1,5 +1,5 @@
 ---
-title: Proposal: Diabetes and its Factors
+title: Diabetes and Obesity
 author: Catherine Cheu
 date: March 24, 2023
 ---
