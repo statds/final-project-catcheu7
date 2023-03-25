@@ -8,7 +8,7 @@ date: March 24, 2023
 
 Diabetes is widespread in the United States, but government data indicates that some states having higher incident rates than others.
 Studies such as one in 2019 by Liu et al. correlated risk factors such as obesity of patients against the incidence rates.
-A state's demographics could amplify risk factors which can increase the rates of diabetes. Understanding how interactions between demographic and risk factors can better prepare policies to mitigate and prevent diabetes from rising in the country.
+A state's demographics could amplify risk factors which can increase the rates of diabetes. Understanding the interactions between demographics and risk factors can better prepare policies to mitigate and prevent diabetes from rising in the country.
 
 # Aims
 
