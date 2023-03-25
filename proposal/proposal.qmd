@@ -10,7 +10,7 @@ Diabetes is widespread in the United States, but government data indicates that 
 Studies such as one in 2019 by Liu et al. correlated risk factors such as obesity of patients against the incidence rates.
 A state's demographics could amplify risk factors which can increase the rates of diabetes. Understanding the interactions between demographics and risk factors can better prepare policies to mitigate and prevent diabetes from rising in the country.
 
-# Aims
+# Specific Aims
 
 The overarching question for this proposal is: How the demographics and the risk factors affecting diabetes in the United States?
 
@@ -22,7 +22,7 @@ This will be broken into two parts:
 
 While sugar is a major factor in diabetes, obesity could also produce co-morbid symptoms which may have diabetes. As such, it may be beneficial to see beyond sugar intake of what can influence diabetes.
 
-# Data
+# Data Description
 
 All incident rates for diabetes is at the state level from the Center of Disease Control and Prevention (CDC). This is yearly data and also can have risk factors such as obesity.
 The data spans from 2000 to 2020, but we will only look at data before 2019. In addition, we will only look for the 50 states so the 3 territories will not be used.
