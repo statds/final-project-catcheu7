@@ -39,10 +39,15 @@ Matplotlib and geopandas will be used to animate the maps of the United States v
 
 Categorical variables include the ethnic groups and states. The ethnic groups will have dummy variables for the regression to use. The states are split into several regions. These are Northeast, South, Midwest, and West. For this project, Alaska and Hawaii are western states.
 
-Linear regression will then use diabetes rate as response variable and obesity as the quantitative variable.
+Linear regression will then use diabetes rate as response variable and obesity and ethnic group composition as the quantitative variables.
 
 # Discussion
 
 Two ways of verifying obesity and diabetes rates can be found through the methods described above. The visualization provides a time-lapse into obesity and diabetes rates so that hot spots can be quickly discovered and the correlation could be more easily inferred.
 
 The linear regression will provide a more concrete answer in whether obesity is significant to diabetes rates as well as looking into the other variables for significance.
+
+# Conclusion
+
+We have two methods presented which show how obesity could be correlated to diabetes. The evolution of obesity and diabetes in the United States can provide an interesting picture of how people could change in the country.
+I would like to compare two states with similar diabetes rates but different demographics and observe to see if obesity plays a role. However, maps will have to be produced to see any possible pairings.
