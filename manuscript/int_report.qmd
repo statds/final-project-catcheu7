@@ -11,3 +11,7 @@ jupyter: python3
 # Methods
 
 ## Data
+
+All data concerning the incidence rates of diabetes comes from the CDC Statistics. This contains all 50 states and territories, however, only the 50 states and the District of Columbia will be considered. In addition, the map of the 50 states and D.C. comes from Kaggle for a .json file which is read through geopandas.
+
+## Animating the United States
