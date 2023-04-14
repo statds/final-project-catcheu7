@@ -16,4 +16,4 @@ All diabetes incidence rates are obtained from the CDC site. The map is obtained
 
 ## Animation
 
-There are two functions the user must use to define and run an animation. The first is completely user-written and defines the next frame to put inside the animation. The second is the FuncAnimation which updates the animation with the frame in the previous function. The result is an animation which has a player to play and stop if needed.
+The animations are done in two steps. The first uses a function defined by users to define the next frame. These frames are the output needed for the FuncAnimation provided in the animation module in matplotlib to recursively extend the animation. Users can then play or stop the animation as needed. An example is done as follows:
