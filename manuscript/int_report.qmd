@@ -29,4 +29,6 @@ pdfs = []
 for a in range(0,len(files)):
 	b = pandas.read_csv(files[a])
 	pdfs.append(b)
+
+geous = geopandas.read_file("../data/us-states.json")
 ```
