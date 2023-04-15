@@ -14,15 +14,19 @@ jupyter: python3
 
 All diabetes incidence rates are obtained from the CDC site. The map is obtained through open source in Kaggle.
 
+# Results
+
+## Animation
+
 ```{python}
-import geopandas, pandas, matplotlib, glob, csv
-from matplotlib import pyplot as plt
+import geopandas, pandas, matplotlib, csv, glob
+from matplotlib import rc
 from matplotlib.animation import FuncAnimation
 
-files = glob.glob('../data/*.csv')
+files = glob.glob("../data/*.csv")
 pdfs = []
 
 for a in range(0,len(files)):
-	b = pandas.read_csv(file[a])
+	b = pandas.read_csv(files[a])
 	pdfs.append(b)
 ```
