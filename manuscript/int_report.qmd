@@ -38,7 +38,7 @@ geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'
 figure, ax = plt.subplots()
 
 def up(z):
-	gm = geous.merge(file[z], on = 'State')
+	gm = geous.merge(pdfs[z], on = 'State')
 	gm.plot(column = 'Percentage', cmap = 'cool', ax = ax)
 
 anim = FuncAnimation(figure, up, frames = 10, interval = 1000)
