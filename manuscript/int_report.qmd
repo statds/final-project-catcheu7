@@ -45,6 +45,10 @@ def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
 	gm.plot(column = 'Percentage', cmap = 'cool', ax = ax)
 
+	gm.plot(column = 'Percentage', cmap = 'cool', ax = ax2)
+	gm.plot(column = 'Percentage', cmap = 'cool', ax = ax3)
+	gm.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
+
 anim = FuncAnimation(figure, up, frames = 10, interval = 1000)
 plt.close()
 
