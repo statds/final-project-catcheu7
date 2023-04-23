@@ -35,7 +35,7 @@ for a in range(0,len(files)):
 
 geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
 
-figure, ax = plt.subplots()
+figure, (ax,ax2,ax3,ax4) = plt.subplots(2,2)
 
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
