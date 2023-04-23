@@ -45,7 +45,7 @@ def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
 	akg = gm[gm['State'].isin(['Alaska'])]
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2)
-	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax1)
+	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
 
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax3)
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
