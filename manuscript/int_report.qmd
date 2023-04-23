@@ -19,6 +19,7 @@ All diabetes incidence rates are obtained from the CDC site. The map is obtained
 ## Animation
 
 ```{python}
+%%capture
 import geopandas, pandas, matplotlib, csv, glob, sklearn
 from matplotlib import rc
 from matplotlib.animation import FuncAnimation
