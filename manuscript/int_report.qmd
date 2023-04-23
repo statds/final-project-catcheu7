@@ -43,7 +43,7 @@ plt.colorbar(cbar)
 
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
-	akg = gm[gm['State'].isin('Alaska')]
+	akg = gm[gm['State'].isin(['Alaska'])]
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2)
 	akg.plot(column = 'Percertage', cmap = 'cool', ax = ax5)
 
