@@ -48,6 +48,4 @@ def up(z):
 anim = FuncAnimation(figure, up, frames = 10, interval = 1000)
 
 anim
-
-plt.show()
 ```
