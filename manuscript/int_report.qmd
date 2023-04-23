@@ -19,7 +19,7 @@ All diabetes incidence rates are obtained from the CDC site. The map is obtained
 ## Animation
 
 ```{python}
-import geopandas, pandas, matplotlib, csv, glob
+import geopandas, pandas, matplotlib, csv, glob, sklearn
 from matplotlib import rc
 from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
@@ -36,6 +36,10 @@ for a in range(0,len(files)):
 geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
 
 figure, (ax,ax2,ax3,ax4) = plt.subplots(2,2)
+
+cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
+
+plt.colorbar(cbar)
 
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
