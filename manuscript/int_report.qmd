@@ -49,7 +49,7 @@ def up(z):
 
 	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax3)
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
-	hi = gm[gm['State'].isin['Hawaii'])]
+	hi = gm[gm['State'].isin(['Hawaii'])]
 
 	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3)
 	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
