@@ -44,8 +44,8 @@ plt.colorbar(cbar)
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
 	akg = gm[gm['State'].isin(['Alaska'])]
-	ax2.set_xlim(-170,-140)
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 10)
+	ax2.set_xlim(-170,-140)
 	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
 
 	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax3)
