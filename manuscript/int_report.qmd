@@ -57,9 +57,15 @@ def up(z):
 	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5)
 	ax5.set_xlim(-170,-140)
 	hi = gm[gm['State'].isin(['Hawaii'])]
+	hs = su[su['State'].isin(['Hawaii'])]
 	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3, vmin = 7, vmax = 14)
+
+	hs.plot(column = 'Percentage', cmap = 'cool', ax = ax6, vmin = 40, vmax = 80)
 	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
+	cs = su[~su['State'].isin(['Alaska', 'Hawaii'])]
 	cont.plot(column = 'Percentage', cmap = 'cool', ax = ax,vmin = 7,vmax = 14)
+
+	cs.plot(column = 'Percentage', cmap = 'cool', ax = ax4,vmin = 40,vmax = 80)
 
 	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
 	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax7)
