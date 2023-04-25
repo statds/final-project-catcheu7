@@ -27,15 +27,19 @@ import matplotlib.pyplot as plt
 rc('animation', html = 'jshtml')
 
 files = glob.glob("../data/*.csv")
+sugar = glob.glob("../data/sugar_data/*.csv")
 pdfs = []
+sdfs = []
 
 for a in range(0,len(files)):
 	b = pandas.read_csv(files[a], skiprows = 2)
+	c = pandas.read_csv(sugar[a],skiprows = 2)
 	pdfs.append(b)
+	sdfs.append(c)
 
 geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
 
-figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3)
+figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3,figsize = (10,10))
 
 cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
 
@@ -43,6 +47,7 @@ plt.colorbar(cbar)
 
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
+	sm = geous.merge(sdf[z], on = 'State')
 	akg = gm[gm['State'].isin(['Alaska'])]
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
 	ax2.set_xlim(-170,-140)
