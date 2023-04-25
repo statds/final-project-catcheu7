@@ -35,7 +35,7 @@ for a in range(0,len(files)):
 
 geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
 
-figure, [[ax,ax2], [ax3,ax4]] = plt.subplots(2,2)
+figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3)
 
 cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
 
@@ -44,16 +44,16 @@ plt.colorbar(cbar)
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
 	akg = gm[gm['State'].isin(['Alaska'])]
-	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 10)
+	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
 	ax2.set_xlim(-170,-140)
 	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
 
 	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax3)
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
 	hi = gm[gm['State'].isin(['Hawaii'])]
-	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3, vmin = 7, vmax = 10)
+	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3, vmin = 7, vmax = 14)
 	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
-	cont.plot(column = 'Percentage', cmap = 'cool', ax = ax)
+	cont.plot(column = 'Percentage', cmap = 'cool', ax = ax,vmin = 7,vmax = 14)
 
 	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
 	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax7)
