@@ -54,7 +54,7 @@ def up(z):
 	ax2.set_xlim(-170,-140)
 	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
 
-	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5)
+	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5, vmin = 40, vmax = 80)
 	ax5.set_xlim(-170,-140)
 	hi = gm[gm['State'].isin(['Hawaii'])]
 	hs = su[su['State'].isin(['Hawaii'])]
