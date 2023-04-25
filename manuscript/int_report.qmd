@@ -12,7 +12,7 @@ jupyter: python3
 
 ## Data Acquisition
 
-All diabetes incidence rates are obtained from the CDC site. The map is obtained through open source in Kaggle.
+All diabetes incidence rates are obtained from the CDC site. The map is obtained through open source in Kaggle. The states are divided into four regions. Please note that Mid-Atlantic states are part of northeast and southeast. In addition, Alaska and Hawaii are part of the western states.
 
 # Results
 
