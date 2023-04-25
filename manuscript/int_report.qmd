@@ -47,14 +47,15 @@ plt.colorbar(cbar)
 
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
-	sm = geous.merge(sdf[z], on = 'State')
+	su = geous.merge(sdfs[z], on = 'State')
 	akg = gm[gm['State'].isin(['Alaska'])]
+	aks = su[su['State'].isin(['Alaska'])]
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
 	ax2.set_xlim(-170,-140)
 	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
 
-	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax3)
-	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
+	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5)
+	ax5.set_xlim(-170,-140)
 	hi = gm[gm['State'].isin(['Hawaii'])]
 	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3, vmin = 7, vmax = 14)
 	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
