@@ -75,3 +75,10 @@ plt.close()
 
 anim
 ```
+
+## Linear Regression
+
+```{python}
+longdf = pdfs + sdfs
+combp = pandas.concat(longdf)
+```
