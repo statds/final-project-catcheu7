@@ -75,12 +75,3 @@ plt.close()
 
 anim
 ```
-
-## Linear Regression
-
-All rows with any missing values are removed from consideration.
-
-```{python}
-cpdfs = pdfs + sdfs
-pdfcomb = pd.concat(cpdfs)
-```
