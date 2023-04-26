@@ -16,7 +16,12 @@ All diabetes incidence rates are obtained from the CDC site. The map is obtained
 
 ```{python}
 ne = ['ME','VT','NH','CT','RI','MA','NY','PA','NJ']
+south = ['DC','VA','MD','DE','NC','SC','GA','FL','MS','MO','TN','KY','WV','AL','TX','AR','LA','OK']
+west = ['CA','WA','OR','ID','MT','CO','WY','UT','NV','AZ','NM','AK','HI']
+mw = ['MI','OH','IL','IN','IA','WI','MN','ND','SD','NE']
 print('Northeast: ' + ne)
+print('South: ' + south)
+print('West: ' + west)
 ```
 
 # Results
