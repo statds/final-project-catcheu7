@@ -78,7 +78,9 @@ anim
 
 ## Linear Regression
 
+For any row with missing values, it was dropped from the dataset.
+
 ```{python}
-longdf = pdfs + sdfs
-combp = pandas.concat(longdf)
+list = pdfs + sdfs
+pdcont = pandas.concat(list)
 ```
