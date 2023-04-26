@@ -12,7 +12,12 @@ jupyter: python3
 
 ## Data Acquisition
 
-All diabetes incidence rates are obtained from the CDC site. The map is obtained through open source in Kaggle. The states are divided into four regions. Please note that Mid-Atlantic states are part of northeast and southeast. In addition, Alaska and Hawaii are part of the western states.
+All diabetes incidence rates are obtained from the CDC site. The map is obtained through open source in Kaggle. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
+
+```{python}
+ne = ['ME','VT','NH','MA','CT','RI','NY','PA','NJ']
+print('Northeast: ' + ne)
+```
 
 # Results
 
