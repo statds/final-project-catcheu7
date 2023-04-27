@@ -94,6 +94,7 @@ For any row with missing values, it was dropped from the dataset.
 
 ```{python}
 list = pdfs + sdfs
-gpd = geous.merge(pandas.concat([pandas.append(pdfs),pandas.append(sdfs)]))
+for i in len(pdfs):
+	gpd = geous.merge(pandas.concat([pdfs[i],sdfs[i]]))
 linmod = linear_model.LinearRegression()
 ```
