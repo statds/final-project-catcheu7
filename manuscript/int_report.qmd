@@ -99,6 +99,6 @@ For any row with missing values, it was dropped from the dataset.
 ```{python}
 list = pdfs + sdfs
 for i in range(0,len(pdfs)):
-	gpd = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar'}), on = 'State'))
+	gpdf = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar})))
 linmod = linear_model.LinearRegression()
 ```
