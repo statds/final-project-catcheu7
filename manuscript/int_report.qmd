@@ -34,7 +34,6 @@ import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
 from matplotlib import rc
 from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
-
 from sklearn import linear_model
 
 rc('animation', html = 'jshtml')
@@ -96,5 +95,5 @@ For any row with missing values, it was dropped from the dataset.
 ```{python}
 list = pdfs + sdfs
 gpd = geous.merge(pandas.concat([pandas.append(pdfs),pandas.append(sdfs)]))
-lm = linear_model.LinearRegression()
+linmod = linear_model.LinearRegression()
 ```
