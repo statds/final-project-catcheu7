@@ -43,7 +43,7 @@ from sklearn import linear_model
 rc('animation', html = 'jshtml')
 
 files = glob.glob("../data/*.csv")
-sugar = glob.glob("C:/Users/ccheu/final-project-catcheu7/data/sugar_data/*.csv")
+sugar = glob.glob("C:/Users/ccheu/final-project-catcheu7/data/sugar_data/*.csv", recursive = True)
 pdfs = []
 sdfs = []
 
