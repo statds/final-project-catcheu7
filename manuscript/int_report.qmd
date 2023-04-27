@@ -93,5 +93,5 @@ For any row with missing values, it was dropped from the dataset.
 
 ```{python}
 list = pdfs + sdfs
-pdcont = pandas.concat(list)
+gpd = geous.merge(pandas.concat([pandas.append(pdfs),pandas.append(sdfs)]))
 ```
