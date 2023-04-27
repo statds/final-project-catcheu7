@@ -8,11 +8,15 @@ jupyter: python3
 
 # Introduction
 
+Diabetes is widespread in the United States and is a major cause of death in the nation. However, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. Diabetes can be more easily developed through risk factors such as obesity and high blood sugar.
+
+In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence.
+
 # Methods
 
 ## Data Acquisition
 
-All diabetes incidence rates are obtained from the CDC site. The map is obtained through open source in Kaggle. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
+All diabetes rates are obtained from the CDC site. The map is obtained through open source in Kaggle. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
 
 ```{python}
 ne = ['ME','VT','NH','CT','RI','MA','NY','PA','NJ']
@@ -95,6 +99,6 @@ For any row with missing values, it was dropped from the dataset.
 ```{python}
 list = pdfs + sdfs
 for i in len(pdfs):
-	gpd = geous.merge(pandas.concat([pdfs[i],sdfs[i]]))
+	gpd = geous.merge(pandas.merge([pdfs[i],sdfs[i].rename(columns = {'Percentage':'Sugar'})]))
 linmod = linear_model.LinearRegression()
 ```
