@@ -19,10 +19,10 @@ ne = ['ME','VT','NH','CT','RI','MA','NY','PA','NJ']
 south = ['DC','VA','MD','DE','NC','SC','GA','FL','MS','MO','TN','KY','WV','AL','TX','AR','LA','OK']
 west = ['CA','WA','OR','ID','MT','CO','WY','UT','NV','AZ','NM','AK','HI']
 mw = ['MI','OH','IL','IN','IA','WI','MN','ND','SD','NE','KS']
-print('Northeast: ' + ne)
-print('South: ' + south)
-print('West: ' + west)
-print('Midwest: ' + mw)
+print('Northeast: ', ne)
+print('South: ', south)
+print('West: ', west)
+print('Midwest: ', mw)
 ```
 
 # Results
@@ -34,6 +34,7 @@ import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
 from matplotlib import rc
 from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
+from sklearn import linear_models
 
 rc('animation', html = 'jshtml')
 
@@ -94,4 +95,5 @@ For any row with missing values, it was dropped from the dataset.
 ```{python}
 list = pdfs + sdfs
 gpd = geous.merge(pandas.concat([pandas.append(pdfs),pandas.append(sdfs)]))
+lin = linear_models.LinearRegression()
 ```
