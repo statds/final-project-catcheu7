@@ -10,7 +10,7 @@ jupyter: python3
 
 # Introduction
 
-In the United States, diabetes is the seventh major cause of death in the nation. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease in 2019. However, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. The ADA also states that minorities have higher rates of diabetes.
+Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar. In the United States, diabetes is the seventh major cause of death in the nation. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease in 2019. However, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. The ADA also states that minorities have higher rates of diabetes.
 
 Diabetes can be more easily developed through risk factors such as obesity and high blood sugar. There are studies which look into how each factor can influence the rates of diabetes. Learning how diabetes is distributed and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and prevent diabetes-related deaths.
 
@@ -20,7 +20,7 @@ In this report, I will look at how the rates of diabetes has developed in the 20
 
 ## Data Acquisition
 
-All diabetes rates are obtained from the CDC site. The map is obtained through open source in Kaggle. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
+All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site. The data is age-adjusted to only people at least 18 years old. The map is obtained through open source in Kaggle. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
 
 ```{python}
 ne = ['ME','VT','NH','CT','RI','MA','NY','PA','NJ']
