@@ -125,6 +125,8 @@ In the future, I would like to take the demographics of two states and compare t
 
 # References
 
+1. AlZu'bi, S.; Elbes, M.; Mughaid, A.; Bdair, N.; Abualigah, L.; Forestiero, A.; Zitar, R.A. Diabetes Monitoring Sytstem in Smart Health Cities Based on Big Data Intelligende. Future Inernet 2023, 15, 85.
+
 American Diabetes Association: Statistics About Data.
 
 2. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk of diabetes. BMC Endocrine Disorders. 19.
