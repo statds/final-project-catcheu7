@@ -39,7 +39,7 @@ The data was procured for 2010 - 2019 due to the high testing blood sugar data o
 
 ## Animation
 
-The following shows the animations of diagnosed diabetes and high blood sugar proportions in the U.S. From the plots, it can be seen that the southeastern U.S. has a higher proportion of diabetes and high blood sugar. This appears to support the 2011 study which found that the region had higher diabetes rates.
+The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot.
 
 ```{python echo = False}
 import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
@@ -120,6 +120,8 @@ linmod = linear_model.LinearRegression()
 ```
 
 # Conclusions
+
+In the future, I would like to take the demographics of two states and compare to see the impact of composition on the diabetes rates. In the study, I found that ethnic groups are classified as one to many races together. As such, it was too difficult to pull the data from the Census site for easy processing.
 
 # References
 
