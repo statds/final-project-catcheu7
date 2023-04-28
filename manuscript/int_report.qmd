@@ -125,6 +125,8 @@ list = pdfs + sdfs
 fitpd = pandas.DataFrame()
 for i in range(0,len(pdfs)):
 	gpdf = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar'}), on = 'State'), on = 'State')
+	gpdf = gpdf.merge(odfs[i].rename(columns = {'Percentage':'Obesity'}), on = 'State')
+	gpdf = gpdf.merge(nhws[i].rename(columns = {'Percentage':'NHW'}), on = 'State')
 	fitpd = pandas.concat([fitpd,gpdf])
 fitpd['ID_r'] = numpy.select([fitpd['id'].isin(ne),fitpd['id'].isin(south),fitpd['id'].isin(west),fitpd['id'].isin(mw)], [1,2,3,4], default = numpy.nan)
 fitpd = fitpd.replace(['No Data','Suppressed'], numpy.nan)
@@ -133,7 +135,7 @@ Xdata = fitpd[['ID_r','Sugar']]
 y = fitpd['Percentage']
 linmod = linear_model.LinearRegression()
 reg = linmod.fit(Xdata,y)
-print("Score: " + str(reg.get_params()))
+print("Score: " + str(reg.score()))
 ```
 
 # Conclusions
