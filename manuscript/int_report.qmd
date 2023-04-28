@@ -29,13 +29,13 @@ print('West: ', west)
 print('Midwest: ', mw)
 ```
 
-The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. For the reason previously mentioned, only the former two groups will be looked at.
+The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. As such, only the first two groups will be looked at.
 
 # Results
 
 ## Animation
 
-```{python}
+```{python echo = False}
 import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
 from matplotlib import rc
 from matplotlib.animation import FuncAnimation
