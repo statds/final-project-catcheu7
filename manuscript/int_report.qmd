@@ -70,7 +70,6 @@ plt.close()
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
 	su = geous.merge(sdfs[z], on = 'State')
-	print(su.head(6))
 	akg = gm[gm['State'].isin(['Alaska'])]
 	aks = su[su['State'].isin(['Alaska'])]
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
