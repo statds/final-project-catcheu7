@@ -100,8 +100,8 @@ def up(z):
 anim = FuncAnimation(figure, up, frames = 10, interval = 1000)
 plt.close()
 
-anim
 plt.suptitle('Top: Percentage of People with Diabetes; Bottom: Percentage with High Blood Sugar')
+anim
 ```
 
 ## Linear Regression
