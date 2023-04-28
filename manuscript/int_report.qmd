@@ -112,7 +112,7 @@ list = pdfs + sdfs
 fitpd = pandas.DataFrame()
 for i in range(0,len(pdfs)):
 	gpdf = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar'}), on = 'State'), on = 'State')
-	fitpd = pd.concat([fitpd,gpdf])
+	fitpd = pandas.concat([fitpd,gpdf])
 linmod = linear_model.LinearRegression()
 ```
 
