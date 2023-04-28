@@ -58,7 +58,6 @@ geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'
 figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3,figsize = (10,10))
 
 cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
-
 plt.colorbar(cbar, ax = ax3)
 plt.close()
 ```
@@ -67,6 +66,7 @@ plt.close()
 def up(z):
 	gm = geous.merge(pdfs[z], on = 'State')
 	su = geous.merge(sdfs[z], on = 'State')
+	print(su.head(6))
 	akg = gm[gm['State'].isin(['Alaska'])]
 	aks = su[su['State'].isin(['Alaska'])]
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
