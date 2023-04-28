@@ -130,7 +130,7 @@ fitpd = fitpd.dropna()
 Xdata = fitpd[['ID_r','Sugar']]
 y = fitpd['Percentage']
 linmod = linear_model.LinearRegression()
-reg = linmod.fit(X,y)
+reg = linmod.fit(Xdata,y)
 ```
 
 # Conclusions
