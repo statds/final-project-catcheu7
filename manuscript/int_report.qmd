@@ -129,6 +129,8 @@ In the future, I would like to take the demographics of two states and compare t
 
 2. American Diabetes Association: Statistics About Data. https://diabetes.org/about-us/statistics/about-diabetes
 
+3. Barker, L.E.; Kirtland, K.A.; Gregg, E.W.; Geiss, L.S.; Thompson, T.J. Geographic Distribution of Diagnosed Diabetes in the U.S.: A Diabetes Belt. American Journal of Preventive Medicine. 2011. 40 (4). 434-439.
+
 4. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk of diabetes. BMC Endocrine Disorders. 19.
 
 5. CDC Diabetes Data. https://gis.cdc.gov/grasp/diabetes/diabetesatlas-surveillance.html#
