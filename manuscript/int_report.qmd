@@ -54,14 +54,20 @@ rc('animation', html = 'jshtml')
 
 files = glob.glob("../data/*.csv")
 sugar = glob.glob("C:/Users/ccheu/final-project-catcheu7/data/sugar_data/*.csv", recursive = True)
+obesity = glob.glob("../data/obesity/*.csv")
+nhw = glob.glob("../data/white/*.csv")
 pdfs = []
 sdfs = []
+odfs = []
+nhws = []
 
 for a in range(0,len(files)):
 	b = pandas.read_csv(files[a], skiprows = 2)
 	c = pandas.read_csv(sugar[a], skiprows = 2)
+	d = pandas.read_csv(obesity[a], skiprows = 2)
 	pdfs.append(b)
 	sdfs.append(c)
+	odfs.append(d)
 
 geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
 
