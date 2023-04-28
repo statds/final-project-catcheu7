@@ -59,7 +59,8 @@ figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3,figsize = (10,10))
 
 cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
 
-plt.colorbar(cbar, cax = ax3)
+plt.colorbar(cbar, ax = ax3)
+plt.close()
 ```
 ```{python}
 
