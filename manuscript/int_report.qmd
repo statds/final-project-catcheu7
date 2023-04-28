@@ -65,9 +65,11 @@ for a in range(0,len(files)):
 	b = pandas.read_csv(files[a], skiprows = 2)
 	c = pandas.read_csv(sugar[a], skiprows = 2)
 	d = pandas.read_csv(obesity[a], skiprows = 2)
+	e = pandas.read_csv(nhw[a], skiprows = 2)
 	pdfs.append(b)
 	sdfs.append(c)
 	odfs.append(d)
+	nhws.append(e)
 
 geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
 
