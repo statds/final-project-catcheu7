@@ -8,7 +8,7 @@ jupyter: python3
 
 # Introduction
 
-Diabetes is widespread in the United States and is a major cause of death in the nation. However, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. Diabetes can be more easily developed through risk factors such as obesity and high blood sugar.
+Diabetes is widespread in the United States and is a major cause of death in the nation. However, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. Diabetes can be more easily developed through risk factors such as obesity and high blood sugar. There are studies which look into how each factor can influence the rates of diabetes. Learning how diabetes is distributed and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and prevent diabetes-related deaths.
 
 In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence.
 
@@ -49,7 +49,7 @@ sdfs = []
 
 for a in range(0,len(files)):
 	b = pandas.read_csv(files[a], skiprows = 2)
-	c = pandas.read_csv(sugar[a], skiprows = 2).replace('No Data', 0)
+	c = pandas.read_csv(sugar[a], skiprows = 2)
 	pdfs.append(b)
 	sdfs.append(c)
 
@@ -59,6 +59,8 @@ figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3,figsize = (10,10))
 
 cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
 plt.colorbar(cbar, ax = ax3)
+cbar2 = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 0, vmax = 60))
+plt.colorbar(cbar2, ax = ax6)
 plt.close()
 ```
 ```{python}
@@ -71,7 +73,7 @@ def up(z):
 	aks = su[su['State'].isin(['Alaska'])]
 	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
 
-	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5, vmin = 40, vmax = 80)
+	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5, vmin = 0, vmax = 80)
 	ax2.set_xlim(-170,-140)
 	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
 	ax5.set_xlim(-170,-140)
@@ -79,12 +81,12 @@ def up(z):
 	hs = su[su['State'].isin(['Hawaii'])]
 	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3, vmin = 7, vmax = 14)
 
-	hs.plot(column = 'Percentage', cmap = 'cool', ax = ax6, vmin = 40, vmax = 80)
+	hs.plot(column = 'Percentage', cmap = 'cool', ax = ax6, vmin = 0, vmax = 80)
 	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
 	cs = su[~su['State'].isin(['Alaska', 'Hawaii'])]
 	cont.plot(column = 'Percentage', cmap = 'cool', ax = ax,vmin = 7,vmax = 14)
 
-	cs.plot(column = 'Percentage', cmap = 'cool', ax = ax4,vmin = 40,vmax = 80)
+	cs.plot(column = 'Percentage', cmap = 'cool', ax = ax4,vmin = 0,vmax = 80)
 
 	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
 	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax7)
