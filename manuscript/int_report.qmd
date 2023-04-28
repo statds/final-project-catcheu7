@@ -114,6 +114,8 @@ print('Top: Percentage of People with Diabetes; Bottom: Percentage with High Blo
 anim
 ```
 
+From the results, it can be seen that the southeastern region has higher rates of diabetes and people with high blood sugar. This is in line with the 2011 study where the southeastern region was found to have higher diabetes rates.
+
 ## Linear Regression
 
 For any row with missing values, it was dropped from the dataset.
@@ -131,7 +133,7 @@ Xdata = fitpd[['ID_r','Sugar']]
 y = fitpd['Percentage']
 linmod = linear_model.LinearRegression()
 reg = linmod.fit(Xdata,y)
-print("Score: " + str(reg.getparams()))
+print("Score: " + str(reg.get_params()))
 ```
 
 # Conclusions
