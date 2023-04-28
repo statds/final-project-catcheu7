@@ -33,9 +33,7 @@ print('West: ', west)
 print('Midwest: ', mw)
 ```
 
-The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. As such, only the first two groups will be looked at.
-
-Obesity data was taken from those who already have diabetes and high testing blood sugar data was taken from those without diabetes. This can lead to discrepancies due to different populations being polled.
+The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. As such, only the first two groups will be looked at. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
 
 # Results
 
