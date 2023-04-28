@@ -124,7 +124,7 @@ fitpd = pandas.DataFrame()
 for i in range(0,len(pdfs)):
 	gpdf = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar'}), on = 'State'), on = 'State')
 	fitpd = pandas.concat([fitpd,gpdf])
-fitpd['ID_r'] = np.select([fitpd['ID'].isin(ne),fitpd['ID'].isin(south),fitpd['ID'].isin(west),fitpd['ID'].isin(mw)],[1,2,3,4],default = np.nan)
+fitpd['ID_r'] = numpy.select([fitpd['ID'].isin(ne),fitpd['ID'].isin(south),fitpd['ID'].isin(west),fitpd['ID'].isin(mw)], [1,2,3,4], default = numpy.nan)
 linmod = linear_model.LinearRegression()
 ```
 
