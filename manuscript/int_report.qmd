@@ -127,7 +127,10 @@ for i in range(0,len(pdfs)):
 fitpd['ID_r'] = numpy.select([fitpd['id'].isin(ne),fitpd['id'].isin(south),fitpd['id'].isin(west),fitpd['id'].isin(mw)], [1,2,3,4], default = numpy.nan)
 fitpd = fitpd.replace(['No Data','Suppressed'], numpy.nan)
 fitpd = fitpd.dropna()
+Xdata = fitpd[['ID_r','Sugar']]
+y = fitpd['Percentage']
 linmod = linear_model.LinearRegression()
+reg = linmod.fit(X,y)
 ```
 
 # Conclusions
