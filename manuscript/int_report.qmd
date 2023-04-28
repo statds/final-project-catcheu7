@@ -49,7 +49,7 @@ sdfs = []
 
 for a in range(0,len(files)):
 	b = pandas.read_csv(files[a], skiprows = 2)
-	c = pandas.read_csv(sugar[a],skiprows = 2).replace('No Data', numpy.nan)
+	c = pandas.read_csv(sugar[a],skiprows = 2).replace('No Data', 0)
 	pdfs.append(b)
 	sdfs.append(c)
 
