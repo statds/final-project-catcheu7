@@ -3042,7 +3042,7 @@ vertical-align: -.125em;
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>Diabetes is widespread in the United States and is a major cause of death in the nation. However, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. Diabetes can be more easily developed through risk factors such as obesity and high blood sugar. There are studies which look into how each factor can influence the rates of diabetes. Learning how diabetes is distributed and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and prevent diabetes-related deaths.</p>
-<p>In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence.</p>
+<p>In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes’ rates in the states.</p>
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
@@ -3065,6 +3065,7 @@ West:  [&#39;CA&#39;, &#39;WA&#39;, &#39;OR&#39;, &#39;ID&#39;, &#39;MT&#39;, &#
 Midwest:  [&#39;MI&#39;, &#39;OH&#39;, &#39;IL&#39;, &#39;IN&#39;, &#39;IA&#39;, &#39;WI&#39;, &#39;MN&#39;, &#39;ND&#39;, &#39;SD&#39;, &#39;NE&#39;, &#39;KS&#39;]</code></pre>
 </div>
 </div>
+<p>The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. As such, only the first two groups will be looked at.</p>
 </section>
 </section>
 <section id="results" class="level1">
@@ -3486,36 +3487,36 @@ vertical-align: middle;
 </style>
 
 <div class="animation">
-  <img id="_anim_img227535bc9bca4da1b5eadb0878b0e3e9">
+  <img id="_anim_imgebee20f292dd468dbbdc1959560a3f4a">
   <div class="anim-controls">
-    <input id="_anim_slider227535bc9bca4da1b5eadb0878b0e3e9" type="range" class="anim-slider" name="points" min="0" max="1" step="1" value="0" oninput="anim227535bc9bca4da1b5eadb0878b0e3e9.set_frame(parseInt(this.value));">
+    <input id="_anim_sliderebee20f292dd468dbbdc1959560a3f4a" type="range" class="anim-slider" name="points" min="0" max="1" step="1" value="0" oninput="animebee20f292dd468dbbdc1959560a3f4a.set_frame(parseInt(this.value));">
     <div class="anim-buttons">
-      <button title="Decrease speed" aria-label="Decrease speed" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.slower()">
+      <button title="Decrease speed" aria-label="Decrease speed" onclick="animebee20f292dd468dbbdc1959560a3f4a.slower()">
           <i class="fa fa-minus"></i></button>
-      <button title="First frame" aria-label="First frame" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.first_frame()">
+      <button title="First frame" aria-label="First frame" onclick="animebee20f292dd468dbbdc1959560a3f4a.first_frame()">
         <i class="fa fa-fast-backward"></i></button>
-      <button title="Previous frame" aria-label="Previous frame" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.previous_frame()">
+      <button title="Previous frame" aria-label="Previous frame" onclick="animebee20f292dd468dbbdc1959560a3f4a.previous_frame()">
           <i class="fa fa-step-backward"></i></button>
-      <button title="Play backwards" aria-label="Play backwards" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.reverse_animation()">
+      <button title="Play backwards" aria-label="Play backwards" onclick="animebee20f292dd468dbbdc1959560a3f4a.reverse_animation()">
           <i class="fa fa-play fa-flip-horizontal"></i></button>
-      <button title="Pause" aria-label="Pause" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.pause_animation()">
+      <button title="Pause" aria-label="Pause" onclick="animebee20f292dd468dbbdc1959560a3f4a.pause_animation()">
           <i class="fa fa-pause"></i></button>
-      <button title="Play" aria-label="Play" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.play_animation()">
+      <button title="Play" aria-label="Play" onclick="animebee20f292dd468dbbdc1959560a3f4a.play_animation()">
           <i class="fa fa-play"></i></button>
-      <button title="Next frame" aria-label="Next frame" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.next_frame()">
+      <button title="Next frame" aria-label="Next frame" onclick="animebee20f292dd468dbbdc1959560a3f4a.next_frame()">
           <i class="fa fa-step-forward"></i></button>
-      <button title="Last frame" aria-label="Last frame" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.last_frame()">
+      <button title="Last frame" aria-label="Last frame" onclick="animebee20f292dd468dbbdc1959560a3f4a.last_frame()">
           <i class="fa fa-fast-forward"></i></button>
-      <button title="Increase speed" aria-label="Increase speed" onclick="anim227535bc9bca4da1b5eadb0878b0e3e9.faster()">
+      <button title="Increase speed" aria-label="Increase speed" onclick="animebee20f292dd468dbbdc1959560a3f4a.faster()">
           <i class="fa fa-plus"></i></button>
     </div>
-    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_select227535bc9bca4da1b5eadb0878b0e3e9" class="anim-state">
-      <input type="radio" name="state" value="once" id="_anim_radio1_227535bc9bca4da1b5eadb0878b0e3e9">
-      <label for="_anim_radio1_227535bc9bca4da1b5eadb0878b0e3e9">Once</label>
-      <input type="radio" name="state" value="loop" id="_anim_radio2_227535bc9bca4da1b5eadb0878b0e3e9" checked>
-      <label for="_anim_radio2_227535bc9bca4da1b5eadb0878b0e3e9">Loop</label>
-      <input type="radio" name="state" value="reflect" id="_anim_radio3_227535bc9bca4da1b5eadb0878b0e3e9">
-      <label for="_anim_radio3_227535bc9bca4da1b5eadb0878b0e3e9">Reflect</label>
+    <form title="Repetition mode" aria-label="Repetition mode" action="#n" name="_anim_loop_selectebee20f292dd468dbbdc1959560a3f4a" class="anim-state">
+      <input type="radio" name="state" value="once" id="_anim_radio1_ebee20f292dd468dbbdc1959560a3f4a">
+      <label for="_anim_radio1_ebee20f292dd468dbbdc1959560a3f4a">Once</label>
+      <input type="radio" name="state" value="loop" id="_anim_radio2_ebee20f292dd468dbbdc1959560a3f4a" checked>
+      <label for="_anim_radio2_ebee20f292dd468dbbdc1959560a3f4a">Loop</label>
+      <input type="radio" name="state" value="reflect" id="_anim_radio3_ebee20f292dd468dbbdc1959560a3f4a">
+      <label for="_anim_radio3_ebee20f292dd468dbbdc1959560a3f4a">Reflect</label>
     </form>
   </div>
 </div>
@@ -3525,9 +3526,9 @@ vertical-align: middle;
   /* Instantiate the Animation class. */
   /* The IDs given should match those used in the template above. */
   (function() {
-    var img_id = "_anim_img227535bc9bca4da1b5eadb0878b0e3e9";
-    var slider_id = "_anim_slider227535bc9bca4da1b5eadb0878b0e3e9";
-    var loop_select_id = "_anim_loop_select227535bc9bca4da1b5eadb0878b0e3e9";
+    var img_id = "_anim_imgebee20f292dd468dbbdc1959560a3f4a";
+    var slider_id = "_anim_sliderebee20f292dd468dbbdc1959560a3f4a";
+    var loop_select_id = "_anim_loop_selectebee20f292dd468dbbdc1959560a3f4a";
     var frames = new Array(10);
     
   frames[0] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8AAAAPACAYAAAD61hCbAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90\
@@ -15918,7 +15919,7 @@ YII=\
     /* set a timeout to make sure all the above elements are created before
        the object is initialized. */
     setTimeout(function() {
-        anim227535bc9bca4da1b5eadb0878b0e3e9 = new Animation(frames, img_id, slider_id, 1000.0,
+        animebee20f292dd468dbbdc1959560a3f4a = new Animation(frames, img_id, slider_id, 1000.0,
                                  loop_select_id);
     }, 0);
   })()
