@@ -80,6 +80,7 @@ def up(z):
 	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
 	cs = su[~su['State'].isin(['Alaska', 'Hawaii'])]
 	cont.plot(column = 'Percentage', cmap = 'cool', ax = ax,vmin = 7,vmax = 14)
+
 	cs.plot(column = 'Percentage', cmap = 'cool', ax = ax4,vmin = 40,vmax = 80)
 
 	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
