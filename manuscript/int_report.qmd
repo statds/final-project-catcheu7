@@ -39,6 +39,8 @@ The data was procured for 2010 - 2019 due to the high testing blood sugar data o
 
 ## Animation
 
+The following shows animations of diagnosed diabetes and high blood sugar in the nation. This supports the study in 2011 in that the southeastern region of the U.S. appeared to have higher rates of diabetes and blood sugar.
+
 ```{python echo = False}
 import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
 from matplotlib import rc
