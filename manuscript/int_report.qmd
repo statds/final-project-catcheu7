@@ -10,7 +10,7 @@ jupyter: python3
 
 Diabetes is widespread in the United States and is a major cause of death in the nation. However, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. Diabetes can be more easily developed through risk factors such as obesity and high blood sugar. There are studies which look into how each factor can influence the rates of diabetes. Learning how diabetes is distributed and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and prevent diabetes-related deaths.
 
-In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence.
+In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes' rates in the states.
 
 # Methods
 
@@ -28,6 +28,8 @@ print('South: ', south)
 print('West: ', west)
 print('Midwest: ', mw)
 ```
+
+The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. For the reason previously mentioned, only the former two groups will be looked at.
 
 # Results
 
