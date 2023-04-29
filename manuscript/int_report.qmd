@@ -45,6 +45,8 @@ The following shows animations of diagnosed diabetes and high blood sugar in the
 
 In the colormaps, the higher the value is, the darker the color the state would show. In this case, the states with higher percentages will show as more purple or pink than states with lower values. States with lower values will show as more cyan.
 
+Alaska and Hawaii are plotted as their own maps as opposed to being with the other 48 states due to time constraints and to ensure that the 48 states could be seen without distortion, especially from Alaska. Alaska was cropped slightly due to its islands expanding to the Eastern Hemisphere which would have distorted the map and shrink the state.
+
 ```{python echo = False}
 import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
 from matplotlib import rc
