@@ -140,7 +140,7 @@ y = fitpd['Percentage']
 linmod = linear_model.LinearRegression()
 reg = linmod.fit(Xdata,y)
 plota = plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'])
-plt.legend(*plota.scatter_elements())
+plt.legend(*plota.legend_elements())
 print("Score: " + str(reg.score(Xdata,y)))
 ```
 
