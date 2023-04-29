@@ -20,7 +20,7 @@ In this report, I will look at how the rates of diabetes has developed in the 20
 
 ## Data Acquisition
 
-All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site [5]. The data is age-adjusted to only people at least 18 years old. 
+All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site [5]. The data is age-adjusted to only people at least 18 years old. The data used covers obesity rates, high test blood sugar rates, the diagnosed percentage of people who have diabetes in each state, and the percentage of people in an ethnic group in a state who have diabetes. The ethnic groups are Hispanic, Non-Hispanic white, Non-Hispanic black, and Non-Hispanic Asian.
 
 The map is obtained through open source in Kaggle. Only the 50 states plus D.C. are in the map, so the CDC data will be curated accordingly. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
 
@@ -35,7 +35,7 @@ print('West: ', west)
 print('Midwest: ', mw)
 ```
 
-The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
+Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was only available from 2008-2020. The data from 2020 was not used due to possible influence from Covid-19 that may have reduced response in the states. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the Non-Hispanic Asians and Hispanics have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
 
 # Results
 
@@ -122,7 +122,7 @@ From the results, it can be seen that the southeastern region has higher rates o
 
 ## Linear Regression
 
-For any row with missing values, it was dropped from the dataset.
+Linear regression was performed to see if obesity, high test blood sugar, and the states regions can be modeled against the diagnosed rates of diabetes for each state. For any row with missing values, it was dropped from the dataset. This leads to some years to not have much data since some variables have few states with data.
 
 ```{python}
 list = pdfs + sdfs
