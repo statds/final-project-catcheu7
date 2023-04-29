@@ -137,7 +137,7 @@ Xdata = fitpd[['ID_r','Sugar', 'Obesity']]
 y = fitpd['Percentage']
 linmod = linear_model.LinearRegression()
 reg = linmod.fit(Xdata,y)
-plt.scatter(fitpd['NHW'],fitpd['Obesity'],c = fitpd['ID_r'])
+plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'], label = name)
 print("Score: " + str(reg.score(Xdata,y)))
 ```
 
