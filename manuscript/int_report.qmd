@@ -160,3 +160,102 @@ In the future, I would like to take the demographics of two states and compare t
 # Appendix
 
 ## Code
+
+```{python echo = False}
+#| output: False
+#| echo: True
+import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
+from matplotlib import rc
+from matplotlib.animation import FuncAnimation
+import matplotlib.pyplot as plt
+from sklearn import linear_model
+
+rc('animation', html = 'jshtml')
+
+files = glob.glob("../data/*.csv")
+sugar = glob.glob("C:/Users/ccheu/final-project-catcheu7/data/sugar_data/*.csv", recursive = True)
+obesity = glob.glob("../data/obesity/*.csv")
+nhw = glob.glob("../data/nh_white/*.csv")
+pdfs = []
+sdfs = []
+odfs = []
+nhws = []
+
+for a in range(0,len(files)):
+	b = pandas.read_csv(files[a], skiprows = 2)
+	c = pandas.read_csv(sugar[a], skiprows = 2)
+	d = pandas.read_csv(obesity[a], skiprows = 2)
+	e = pandas.read_csv(nhw[a], skiprows = 2)
+	pdfs.append(b)
+	sdfs.append(c)
+	odfs.append(d)
+	nhws.append(e[['Percentage', 'State']])
+
+geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
+
+figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3,figsize = (10,10))
+
+cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
+plt.colorbar(cbar, ax = ax3)
+cbar2 = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 0, vmax = 60))
+plt.colorbar(cbar2, ax = ax6)
+plt.close()
+```
+```{python}
+#| output: False
+#| echo: True
+
+def up(z):
+	gm = geous.merge(pdfs[z], on = 'State')
+	su = geous.merge(sdfs[z], on = 'State')
+	akg = gm[gm['State'].isin(['Alaska'])]
+	aks = su[su['State'].isin(['Alaska'])]
+	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
+
+	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5, vmin = 0, vmax = 80)
+	ax2.set_xlim(-170,-140)
+	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
+	ax5.set_xlim(-170,-140)
+	hi = gm[gm['State'].isin(['Hawaii'])]
+	hs = su[su['State'].isin(['Hawaii'])]
+	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3, vmin = 7, vmax = 14)
+
+	hs.plot(column = 'Percentage', cmap = 'cool', ax = ax6, vmin = 0, vmax = 80)
+	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
+	cs = su[~su['State'].isin(['Alaska', 'Hawaii'])]
+	cont.plot(column = 'Percentage', cmap = 'cool', ax = ax,vmin = 7,vmax = 14)
+
+	cs.plot(column = 'Percentage', cmap = 'cool', ax = ax4,vmin = 0,vmax = 80)
+
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax7)
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax10)
+
+anim = FuncAnimation(figure, up, frames = 10, interval = 1000)
+plt.close()
+
+print('Top: Percentage of People with Diabetes; Bottom: Percentage with High Blood Sugar')
+anim
+```
+
+```{python}
+#| output: False
+#| echo: True
+list = pdfs + sdfs
+fitpd = pandas.DataFrame()
+for i in range(0,len(pdfs)):
+	gpdf = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar'}), on = 'State'), on = 'State')
+	gpdf = gpdf.merge(odfs[i].rename(columns = {'Percentage':'Obesity'}), on = 'State')
+	gpdf = gpdf.merge(nhws[i].rename(columns = {'Percentage':'NHW'}), on = 'State')
+	fitpd = pandas.concat([fitpd,gpdf])
+fitpd['ID_r'] = numpy.select([fitpd['id'].isin(ne),fitpd['id'].isin(south),fitpd['id'].isin(west),fitpd['id'].isin(mw)], [1,2,3,4], default = numpy.nan)
+fitpd = fitpd.replace(['No Data','Suppressed'], numpy.nan)
+fitpd = fitpd.dropna()
+Xdata = fitpd[['ID_r','Sugar', 'Obesity']]
+y = fitpd['Percentage']
+linmod = linear_model.LinearRegression()
+reg = linmod.fit(Xdata,y)
+plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'], label = ['Northeast','Southeast','West','Midwest'])
+print("Score: " + str(reg.score(Xdata,y)))
+```
+
