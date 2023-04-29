@@ -145,6 +145,8 @@ linmod = linear_model.LinearRegression()
 reg = linmod.fit(Xdata,y)
 plota = plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'])
 plt.legend(*plota.legend_elements())
+plt.ylabel('Obesity Percentage')
+plt.xlabel('Diabetes Percentage')
 print("Score: " + str(reg.score(Xdata,y)))
 ```
 
@@ -167,6 +169,8 @@ In the future, I would like to take the demographics of two states and compare t
 4. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk of diabetes. BMC Endocrine Disorders. 19.
 
 5. CDC Diabetes Data. https://gis.cdc.gov/grasp/diabetes/diabetesatlas-surveillance.html#
+
+6. USA states GeoJson. Kaggle. https://www.kaggle.com/datasets/pompelmo/usa-states-geojson.
 
 # Appendix
 
