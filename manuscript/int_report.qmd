@@ -22,7 +22,7 @@ In this report, I will look at how the rates of diabetes has developed in the 20
 
 All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site [5]. The data is age-adjusted to only people at least 18 years old. The data used covers obesity rates, high test blood sugar rates, the diagnosed percentage of people who have diabetes in each state, and the percentage of people in an ethnic group in a state who have diabetes. The ethnic groups are Hispanic, Non-Hispanic white, Non-Hispanic black, and Non-Hispanic Asian.
 
-The map is obtained through open source in Kaggle. Only the 50 states plus D.C. are in the map, so the CDC data will be curated accordingly. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
+The map is obtained through open source in Kaggle [6]. Only the 50 states plus D.C. are in the map, so the CDC data will be curated accordingly. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
 
 ```{python}
 ne = ['ME','VT','NH','CT','RI','MA','NY','PA','NJ']
@@ -35,13 +35,13 @@ print('West: ', west)
 print('Midwest: ', mw)
 ```
 
-Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was only available from 2008-2020. The data from 2020 was not used due to possible influence from Covid-19 that may have reduced response in the states. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the Non-Hispanic Asians and Hispanics have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
+Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was only available from 2008-2020. The data from 2020 was not used due to possible influence from Covid-19 that may have reduced response in the states. In addition, for the ethnic groups, only the non-Hispanic white was near complete while the Non-Hispanic Asians, Non-Hispanic Blacks, and Hispanics have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
 
 # Results
 
 ## Animation
 
-The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot. This could lead to states with no information to show as the highest levels of diabetes where they might not be. This may be due to limitations in matplotlib where the data with no information was being tried to be set as a different category in the colormaps.
+The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot. This could lead to states with no information to show as the highest levels of diabetes where they might not be. This may be due to limitations in matplotlib where the data with no information was being tried to be set as a different category in the colormaps. The animation can be played through the buttons at the bottom of the plots of the paper.
 
 In the colormaps, the higher the value is, the darker the color the state would show. In this case, the states with higher percentages will show as more purple or pink than states with lower values. States with lower values will show as more cyan.
 
