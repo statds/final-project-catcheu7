@@ -124,6 +124,8 @@ From the results, it can be seen that the southeastern region has higher rates o
 
 Linear regression was performed to see if obesity, high test blood sugar, and the states regions can be modeled against the diagnosed rates of diabetes for each state. For any row with missing values, it was dropped from the dataset. This leads to some years to not have much data since some variables have few states with data.
 
+The Non-Hispanic white rates of diabetes for every state was plotted against their corresponding obesity rates to see if there are any patterns. The points are color-coded by region, with 1 = Northeast, 2 = Southeastern, 3 = West, 4 = Midwest.
+
 ```{python}
 list = pdfs + sdfs
 fitpd = pandas.DataFrame()
@@ -143,6 +145,10 @@ plota = plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'])
 plt.legend(*plota.legend_elements())
 print("Score: " + str(reg.score(Xdata,y)))
 ```
+
+From the scatterplot, two conclusions are reached. The first is that the southeastern region of the nation appears to have generally higher obesity and diabetes rates for Non-Hispanic whites while the other regions do not have as high of rates despite outliers. In addition, there is a general correlation between the diabetes and obesity rates.
+
+However, the linear model was not a good fit for the data due to the low score value. The model could be improved if there was data on the total obesity rate for a state rather than just the obesity rate for the diabetic population.
 
 # Conclusions
 
