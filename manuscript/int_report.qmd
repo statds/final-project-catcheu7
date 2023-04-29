@@ -69,7 +69,7 @@ for a in range(0,len(files)):
 	pdfs.append(b)
 	sdfs.append(c)
 	odfs.append(d)
-	nhws.append(e['Percentage'])
+	nhws.append(e['Percentage', 'State'])
 
 geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
 
