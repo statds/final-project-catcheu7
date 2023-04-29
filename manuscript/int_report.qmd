@@ -10,7 +10,7 @@ jupyter: python3
 
 # Introduction
 
-Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar in the blood. This leads to many complications that can include amputation and death. In the United States, diabetes is the seventh major cause of death in the nation. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease in 2019. However, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. The ADA also states that minorities have higher rates of diabetes.
+Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar in the blood. This leads to many complications that can include amputation and death. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease and that diabetes is the seventh major cause of death in 2019. The distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. The ADA also states that minorities have higher rates of diabetes.
 
 Diabetes can be more easily developed through risk factors such as obesity and high blood sugar. There are studies which look into how each factor can influence the rates of diabetes. Learning how diabetes is distributed and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and prevent diabetes-related deaths.
 
@@ -35,13 +35,15 @@ print('West: ', west)
 print('Midwest: ', mw)
 ```
 
-The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. As such, only the first two groups will be looked at. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
+The data was procured for 2010 - 2019 due to the high testing blood sugar data only from 2008 - 2020. In addition, for the ethnic groups, only the non-Hispanic white and African American data were near complete while the others have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
 
 # Results
 
 ## Animation
 
-The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot.
+The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot. This could lead to states with no information to show as the highest levels of diabetes where they might not be. This may be due to limitations in matplotlib where the data with no information was being tried to be set as a different category in the colormaps.
+
+In the colormaps, the higher the value is, the darker the color the state would show. In this case, the states with higher percentages will show as more purple or pink than states with lower values. States with lower values will show as more cyan.
 
 ```{python echo = False}
 import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
