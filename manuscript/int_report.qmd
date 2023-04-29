@@ -69,7 +69,7 @@ for a in range(0,len(files)):
 	pdfs.append(b)
 	sdfs.append(c)
 	odfs.append(d)
-	nhws.append(e['Percentage', 'State'])
+	nhws.append(e[['Percentage', 'State']])
 
 geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
 
@@ -128,7 +128,7 @@ fitpd = pandas.DataFrame()
 for i in range(0,len(pdfs)):
 	gpdf = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar'}), on = 'State'), on = 'State')
 	gpdf = gpdf.merge(odfs[i].rename(columns = {'Percentage':'Obesity'}), on = 'State')
-	gpdf = gpdf.merge(nhws[i].rename('NHW'), on = 'State')
+	gpdf = gpdf.merge(nhws[i].rename(columns = {'Percentage':'NHW'}), on = 'State')
 	fitpd = pandas.concat([fitpd,gpdf])
 fitpd['ID_r'] = numpy.select([fitpd['id'].isin(ne),fitpd['id'].isin(south),fitpd['id'].isin(west),fitpd['id'].isin(mw)], [1,2,3,4], default = numpy.nan)
 fitpd = fitpd.replace(['No Data','Suppressed'], numpy.nan)
