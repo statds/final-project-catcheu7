@@ -41,7 +41,7 @@ Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was o
 
 ## Animation
 
-The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot. This could lead to states with no information to show as the highest levels of diabetes where they might not be. This may be due to limitations in matplotlib where the data with no information was being tried to be set as a different category in the colormaps. The animation can be played through the buttons at the bottom of the plots of the paper.
+The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot. This could lead to states with no information to show as the highest levels of diabetes where they might not be. This may be due to limitations in matplotlib where the data with no information was being tried to be set as a different category in the colormaps. The animation can be played through the buttons at the bottom of the plots of this paper.
 
 In the colormaps, the higher the value is, the darker the color the state would show. In this case, the states with higher percentages will show as more purple or pink than states with lower values. States with lower values will show as more cyan.
 
@@ -156,11 +156,11 @@ However, the linear model was not a good fit for the data due to the low score v
 
 # Conclusions
 
-In the future, I would like to take the demographics of two states and compare to see the impact of composition on the diabetes rates. In the study, I found that ethnic groups are classified as one to many races together. As such, it was too difficult to pull the data from the Census site for easy processing.
+From the results, the southeastern region of the U.S. has a higher rate of diabetes and high blood sugar. A linear model does not appear to be a good fit for the data. In the future, I would like to take the demographics of two states and compare to see the impact of composition on the diabetes rates. In the study, I found that ethnic groups are classified as one to many races together. As such, it was too difficult to pull the data from the Census site for easy processing.
 
 # References
 
-1. AlZu'bi, S.; Elbes, M.; Mughaid, A.; Bdair, N.; Abualigah, L.; Forestiero, A.; Zitar, R.A. Diabetes Monitoring Sytstem in Smart Health Cities Based on Big Data Intelligende. Future Inernet 2023, 15, 85.
+1. AlZu'bi, S.; Elbes, M.; Mughaid, A.; Bdair, N.; Abualigah, L.; Forestiero, A.; Zitar, R.A. Diabetes Monitoring Sytstem in Smart Health Cities Based on Big Data Intelligende. Future Internet 2023, 15, 85.
 
 2. American Diabetes Association: Statistics About Data. https://diabetes.org/about-us/statistics/about-diabetes
 
