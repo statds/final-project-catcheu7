@@ -10,9 +10,9 @@ jupyter: python3
 
 # Introduction
 
-Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar in the blood. This leads to many complications that can include amputation and death. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease and that diabetes is the seventh major cause of death in 2019. The distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others. The ADA also states that minorities have higher rates of diabetes.
+Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar in the blood [1]. This leads to many complications that can include amputation and death. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease and that diabetes is the seventh major cause of death in 2019 [2]. The distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others [3]. The ADA also states that minorities have higher rates of diabetes.
 
-Diabetes can be more easily developed through risk factors such as obesity and high blood sugar. There are studies which look into how each factor can influence the rates of diabetes. Learning how diabetes is distributed and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and prevent diabetes-related deaths.
+Diabetes can be more easily developed through risk factors such as obesity and high blood sugar. There are studies which look into how each factor can influence the rates of diabetes [4]. Learning how diabetes is distributed and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and prevent diabetes-related deaths.
 
 In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes' rates in the states.
 
@@ -20,7 +20,7 @@ In this report, I will look at how the rates of diabetes has developed in the 20
 
 ## Data Acquisition
 
-All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site. The data is age-adjusted to only people at least 18 years old. 
+All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site [5]. The data is age-adjusted to only people at least 18 years old. 
 
 The map is obtained through open source in Kaggle. Only the 50 states plus D.C. are in the map, so the CDC data will be curated accordingly. The states are divided into four regions. Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states. I used the National Geographic classification which is as follows:
 
@@ -140,6 +140,7 @@ y = fitpd['Percentage']
 linmod = linear_model.LinearRegression()
 reg = linmod.fit(Xdata,y)
 plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'], label = ['Northeast','Southeast','West','Midwest'])
+plt.legend()
 print("Score: " + str(reg.score(Xdata,y)))
 ```
 
@@ -258,6 +259,7 @@ y = fitpd['Percentage']
 linmod = linear_model.LinearRegression()
 reg = linmod.fit(Xdata,y)
 plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'], label = ['Northeast','Southeast','West','Midwest'])
+plt.legend()
 print("Score: " + str(reg.score(Xdata,y)))
 ```
 
