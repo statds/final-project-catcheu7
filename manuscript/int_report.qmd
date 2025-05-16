@@ -1,7 +1,7 @@
 ---
 title: A Look into the Distribution of Diabetes in the United States
 author: Catherine Cheu
-date: April 28, 2023
+date: April 28, 2023 (Updated: May 16, 2025)
 embed-resources: true
 execute:
    echo: false
@@ -22,7 +22,7 @@ In this report, I will look at how the rates of diabetes has developed in the 20
 
 All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site [5]. The data is age-adjusted to only people at least 18 years old. The data used covers obesity rates, high test blood sugar rates, the diagnosed percentage of people who have diabetes in each state, and the percentage of people in an ethnic group in a state who have diabetes. The ethnic groups are Hispanic, Non-Hispanic white, Non-Hispanic black, and Non-Hispanic Asian.
 
-The map is obtained through open source data in Kaggle [6]. Only the 50 states plus D.C. are displayed in the map, so the CDC data will be curated accordingly. The states are divided into four regions: Northeast, South, West, and Midwest. I used the National Geographic classification which is as follows:
+The map is obtained through open source data in Kaggle [6]. Only the 50 states plus D.C. are displayed in the map, so the CDC data will be curated accordingly. The states are divided into four regions: Northeast, South, West, and Midwest. This is through the National Geographic classification which is as follows:
 
 ```{python}
 ne = ['ME','VT','NH','CT','RI','MA','NY','PA','NJ']
@@ -35,7 +35,7 @@ print('West: ', west)
 print('Midwest: ', mw)
 ```
 
-Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states even though they are generally classified as separate regions. 
+Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states even though they are generally classified as separate regions. This allows for fewer classes that would need to be modeled against the data which would lead to less overfitting (?) of the data.
 
 Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was only available from 2008-2020. The data from 2020 was not used due to possible influence from Covid-19 that may have reduced response in the states. In addition, for the ethnic groups, only the non-Hispanic white was near complete while the Non-Hispanic Asians, Non-Hispanic Blacks, and Hispanics have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
 
