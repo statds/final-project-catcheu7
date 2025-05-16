@@ -16,7 +16,7 @@ There are many risk factors that can increase the chance of someone developing d
 
 In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes' rates in the states.
 
-```{python}
+```{python echo = False}
 #Look into socioeconomic factors
 ```
 
