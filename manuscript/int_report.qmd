@@ -1,7 +1,7 @@
 ---
 title: A Look into the Distribution of Diabetes in the United States
 author: Catherine Cheu
-date: April 28, 2023 (Updated: May 16, 2025)
+date: April 28, 2023 (Updated: May 22, 2025)
 embed-resources: true
 execute:
    echo: false
