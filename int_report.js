@@ -2,7 +2,7 @@
 <div>
 <h1>A Look into the Distribution of Diabetes in the United States</h1>
 <p>author: Catherine Cheu</p>
-<p>date: April 28, 2023 (Updated - May 23, 2025)</p>
+<p>date: April 28, 2023 (Updated - May 26, 2025)</p>
 </div>
 <h2>Introduction</h2>
 
