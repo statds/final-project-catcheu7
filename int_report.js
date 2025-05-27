@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <div>
 <h1>A Look into the Distribution of Diabetes in the United States</h1>
 <p>author: Catherine Cheu</p>
@@ -280,3 +281,4 @@ plt.legend()
 print("Score: " + str(reg.score(Xdata,y)))
 ```
 
+</html>
