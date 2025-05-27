@@ -1,0 +1,277 @@
+<DOCTYPE! html>
+<h1>A Look into the Distribution of Diabetes in the United States</h1>
+<p>author: Catherine Cheu</p>
+<p>date: April 28, 2023 (Updated - May 23, 2025)</p>
+<h2>Introduction</h2>
+
+<p>Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar in the blood [1]. This leads to many complications that can include amputation and death. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease and that diabetes is the seventh major cause of death in 2019 [2]. Despite its prevalence, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others [3]. The ADA also states that minorities have higher rates of diabetes.</p>
+
+There are many risk factors that can increase the chance of someone developing diabetes, including obesity, high blood sugar, and ethnicity. There are studies which look into how each factor can influence the rates of diabetes [4]. Learning how diabetes is distributed in the United States and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and better improve the effectiveness of the healthcare system.
+
+In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes' rates in the states.
+
+```{python echo = False}
+#Look into socioeconomic factors
+```
+
+# Methods
+
+## Data Acquisition (Updated May 16, 2025)
+
+All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site [5]. The data is age-adjusted to only people at least 18 years old. The data used covers obesity rates, high test blood sugar rates, the diagnosed percentage of people who have diabetes in each state, and the percentage of people in an ethnic group in a state who have diabetes. The ethnic groups are Hispanic, Non-Hispanic white, Non-Hispanic black, and Non-Hispanic Asian.
+
+The map is obtained through open source data in Kaggle [6]. Only the 50 states plus D.C. are displayed in the map, so the CDC data will be curated accordingly. The states are divided into four regions: Northeast, South, West, and Midwest. This is through the National Geographic classification which is as follows:
+
+```{python}
+ne = ['ME','VT','NH','CT','RI','MA','NY','PA','NJ']
+south = ['DC','VA','MD','DE','NC','SC','GA','FL','MS','MO','TN','KY','WV','AL','TX','AR','LA','OK']
+west = ['CA','WA','OR','ID','MT','CO','WY','UT','NV','AZ','NM','AK','HI']
+mw = ['MI','OH','IL','IN','IA','WI','MN','ND','SD','NE','KS']
+print('Northeast: ', ne)
+print('South: ', south)
+print('West: ', west)
+print('Midwest: ', mw)
+```
+
+Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states even though they are generally classified as separate regions. This allows for fewer classes that would need to be modeled against the data which would lead to less overfitting (?) of the data.
+
+Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was only available from 2008-2020. The data from 2020 was not used due to possible influence from Covid-19 that may have reduced response in the states. In addition, for the ethnic groups, only the non-Hispanic white was near complete while the Non-Hispanic Asians, Non-Hispanic Blacks, and Hispanics have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
+
+# Results
+
+## Animation
+
+The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot. This could lead to states with no information to show as the highest levels of diabetes where they might not be. This may be due to limitations in matplotlib where the data with no information was being tried to be set as a different category in the colormaps. The animation can be played through the buttons at the bottom of the plots of this paper.
+
+In the colormaps, the higher the value is, the darker the color the state would show. In this case, the states with higher percentages will show as more purple or pink than states with lower values. States with lower values will show as more cyan.
+
+Alaska and Hawaii are plotted as their own maps as opposed to being with the other 48 states due to time constraints and to ensure that the 48 states could be seen without distortion, especially from Alaska. Alaska was cropped slightly due to its islands expanding to the Eastern Hemisphere which would have distorted the map and shrink the state.
+
+```{python echo = False}
+import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
+from matplotlib import rc
+from matplotlib.animation import FuncAnimation
+import matplotlib.pyplot as plt
+from sklearn import linear_model
+
+rc('animation', html = 'jshtml')
+
+files = glob.glob("../data/*.csv")
+sugar = glob.glob("C:/Users/ccheu/final-project-catcheu7/data/sugar_data/*.csv", recursive = True)
+obesity = glob.glob("../data/obesity/*.csv")
+nhw = glob.glob("../data/nh_white/*.csv")
+pdfs = []
+sdfs = []
+odfs = []
+nhws = []
+
+for a in range(0,len(files)):
+	b = pandas.read_csv(files[a], skiprows = 2)
+	c = pandas.read_csv(sugar[a], skiprows = 2)
+	d = pandas.read_csv(obesity[a], skiprows = 2)
+	e = pandas.read_csv(nhw[a], skiprows = 2)
+	pdfs.append(b)
+	sdfs.append(c)
+	odfs.append(d)
+	nhws.append(e[['Percentage', 'State']])
+
+geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
+
+figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3,figsize = (10,10))
+
+cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
+plt.colorbar(cbar, ax = ax3)
+cbar2 = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 0, vmax = 60))
+plt.colorbar(cbar2, ax = ax6)
+plt.close()
+```
+```{python}
+
+def up(z):
+	gm = geous.merge(pdfs[z], on = 'State')
+	su = geous.merge(sdfs[z], on = 'State')
+	akg = gm[gm['State'].isin(['Alaska'])]
+	aks = su[su['State'].isin(['Alaska'])]
+	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
+
+	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5, vmin = 0, vmax = 80)
+	ax2.set_xlim(-170,-140)
+	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
+	ax5.set_xlim(-170,-140)
+	hi = gm[gm['State'].isin(['Hawaii'])]
+	hs = su[su['State'].isin(['Hawaii'])]
+	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3, vmin = 7, vmax = 14)
+
+	hs.plot(column = 'Percentage', cmap = 'cool', ax = ax6, vmin = 0, vmax = 80)
+	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
+	cs = su[~su['State'].isin(['Alaska', 'Hawaii'])]
+	cont.plot(column = 'Percentage', cmap = 'cool', ax = ax,vmin = 7,vmax = 14)
+
+	cs.plot(column = 'Percentage', cmap = 'cool', ax = ax4,vmin = 0,vmax = 80)
+
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax7)
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax10)
+
+anim = FuncAnimation(figure, up, frames = 10, interval = 1000)
+plt.close()
+
+print('Top: Percentage of People with Diabetes; Bottom: Percentage with High Blood Sugar')
+anim
+```
+
+From the results, it can be seen that the southeastern region has higher rates of diabetes and people with high blood sugar. This is in line with the 2011 study where the southeastern region was found to have higher diabetes rates.
+
+## Linear Regression
+
+Linear regression was performed to see if obesity, high test blood sugar, and the states regions can be modeled against the diagnosed rates of diabetes for each state. For any row with missing values, it was dropped from the dataset. This leads to some years to not have much data since some variables have few states with data.
+
+The Non-Hispanic white rates of diabetes for every state was plotted against their corresponding obesity rates to see if there are any patterns. The points are color-coded by region, with 1 = Northeast, 2 = Southeastern, 3 = West, 4 = Midwest.
+
+```{python}
+list = pdfs + sdfs
+fitpd = pandas.DataFrame()
+for i in range(0,len(pdfs)):
+	gpdf = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar'}), on = 'State'), on = 'State')
+	gpdf = gpdf.merge(odfs[i].rename(columns = {'Percentage':'Obesity'}), on = 'State')
+	gpdf = gpdf.merge(nhws[i].rename(columns = {'Percentage':'NHW'}), on = 'State')
+	fitpd = pandas.concat([fitpd,gpdf])
+fitpd['ID_r'] = numpy.select([fitpd['id'].isin(ne),fitpd['id'].isin(south),fitpd['id'].isin(west),fitpd['id'].isin(mw)], [1,2,3,4], default = numpy.nan)
+fitpd = fitpd.replace(['No Data','Suppressed'], numpy.nan)
+fitpd = fitpd.dropna()
+Xdata = fitpd[['ID_r','Sugar', 'Obesity']]
+y = fitpd['Percentage']
+linmod = linear_model.LinearRegression()
+reg = linmod.fit(Xdata,y)
+plota = plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'])
+plt.legend(*plota.legend_elements())
+plt.ylabel('Obesity Percentage')
+plt.xlabel('Diabetes Percentage')
+print("Score: " + str(reg.score(Xdata,y)))
+```
+
+From the scatterplot, two conclusions are reached. The first is that the southeastern region of the nation appears to have generally higher obesity and diabetes rates for Non-Hispanic whites while the other regions do not have as high of rates despite outliers. In addition, there is a general correlation between the diabetes and obesity rates.
+
+However, the linear model was not a good fit for the data due to the low score value. The model could be improved if there was data on the total obesity rate for a state rather than just the obesity rate for the diabetic population.
+
+# Conclusions
+
+From the results, the southeastern region of the U.S. has a higher rate of diabetes and high blood sugar. A linear model does not appear to be a good fit for the data. In the future, I would like to take the demographics of two states and compare to see the impact of composition on the diabetes rates. In the study, I found that ethnic groups are classified as one to many races together. As such, it was too difficult to pull the data from the Census site for easy processing.
+
+# References
+
+1. AlZu'bi, S.; Elbes, M.; Mughaid, A.; Bdair, N.; Abualigah, L.; Forestiero, A.; Zitar, R.A. Diabetes Monitoring Sytstem in Smart Health Cities Based on Big Data Intelligende. Future Internet 2023, 15, 85.
+
+2. American Diabetes Association: Statistics About Data. https://diabetes.org/about-us/statistics/about-diabetes
+
+3. Barker, L.E.; Kirtland, K.A.; Gregg, E.W.; Geiss, L.S.; Thompson, T.J. Geographic Distribution of Diagnosed Diabetes in the U.S.: A Diabetes Belt. American Journal of Preventive Medicine. 2011. 40 (4). 434-439.
+
+4. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk of diabetes. BMC Endocrine Disorders. 19.
+
+5. CDC Diabetes Data. https://gis.cdc.gov/grasp/diabetes/diabetesatlas-surveillance.html#
+
+6. USA states GeoJson. Kaggle. https://www.kaggle.com/datasets/pompelmo/usa-states-geojson.
+
+# Appendix
+
+## Code
+
+```{python echo = False}
+#| output: False
+#| echo: True
+import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
+from matplotlib import rc
+from matplotlib.animation import FuncAnimation
+import matplotlib.pyplot as plt
+from sklearn import linear_model
+
+rc('animation', html = 'jshtml')
+
+files = glob.glob("../data/*.csv")
+sugar = glob.glob("C:/Users/ccheu/final-project-catcheu7/data/sugar_data/*.csv", recursive = True)
+obesity = glob.glob("../data/obesity/*.csv")
+nhw = glob.glob("../data/nh_white/*.csv")
+pdfs = []
+sdfs = []
+odfs = []
+nhws = []
+
+for a in range(0,len(files)):
+	b = pandas.read_csv(files[a], skiprows = 2)
+	c = pandas.read_csv(sugar[a], skiprows = 2)
+	d = pandas.read_csv(obesity[a], skiprows = 2)
+	e = pandas.read_csv(nhw[a], skiprows = 2)
+	pdfs.append(b)
+	sdfs.append(c)
+	odfs.append(d)
+	nhws.append(e[['Percentage', 'State']])
+
+geous = geopandas.read_file("../data/us-states.json").rename(columns = {'name':'State'})
+
+figure, [[ax,ax2,ax3], [ax4,ax5,ax6]] = plt.subplots(2,3,figsize = (10,10))
+
+cbar = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 7, vmax = 14))
+plt.colorbar(cbar, ax = ax3)
+cbar2 = plt.cm.ScalarMappable(cmap = 'cool', norm = plt.Normalize(vmin = 0, vmax = 60))
+plt.colorbar(cbar2, ax = ax6)
+plt.close()
+```
+```{python}
+#| output: False
+#| echo: True
+
+def up(z):
+	gm = geous.merge(pdfs[z], on = 'State')
+	su = geous.merge(sdfs[z], on = 'State')
+	akg = gm[gm['State'].isin(['Alaska'])]
+	aks = su[su['State'].isin(['Alaska'])]
+	akg.plot(column = 'Percentage', cmap = 'cool', ax = ax2, vmin = 7, vmax = 14)
+
+	aks.plot(column = 'Percentage', cmap = 'cool', ax = ax5, vmin = 0, vmax = 80)
+	ax2.set_xlim(-170,-140)
+	#akg.plot(column = 'Percentage', cmap = 'cool', ax = ax)
+	ax5.set_xlim(-170,-140)
+	hi = gm[gm['State'].isin(['Hawaii'])]
+	hs = su[su['State'].isin(['Hawaii'])]
+	hi.plot(column = 'Percentage', cmap = 'cool', ax = ax3, vmin = 7, vmax = 14)
+
+	hs.plot(column = 'Percentage', cmap = 'cool', ax = ax6, vmin = 0, vmax = 80)
+	cont = gm[~gm['State'].isin(['Alaska', 'Hawaii'])]
+	cs = su[~su['State'].isin(['Alaska', 'Hawaii'])]
+	cont.plot(column = 'Percentage', cmap = 'cool', ax = ax,vmin = 7,vmax = 14)
+
+	cs.plot(column = 'Percentage', cmap = 'cool', ax = ax4,vmin = 0,vmax = 80)
+
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax4)
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax7)
+	#cont.plot(column = 'Percentage', cmap = 'cool', ax = ax10)
+
+anim = FuncAnimation(figure, up, frames = 10, interval = 1000)
+plt.close()
+
+print('Top: Percentage of People with Diabetes; Bottom: Percentage with High Blood Sugar')
+anim
+```
+
+```{python}
+#| output: False
+#| echo: True
+list = pdfs + sdfs
+fitpd = pandas.DataFrame()
+for i in range(0,len(pdfs)):
+	gpdf = geous.merge(pdfs[i].merge(sdfs[i].rename(columns = {'Percentage':'Sugar'}), on = 'State'), on = 'State')
+	gpdf = gpdf.merge(odfs[i].rename(columns = {'Percentage':'Obesity'}), on = 'State')
+	gpdf = gpdf.merge(nhws[i].rename(columns = {'Percentage':'NHW'}), on = 'State')
+	fitpd = pandas.concat([fitpd,gpdf])
+fitpd['ID_r'] = numpy.select([fitpd['id'].isin(ne),fitpd['id'].isin(south),fitpd['id'].isin(west),fitpd['id'].isin(mw)], [1,2,3,4], default = numpy.nan)
+fitpd = fitpd.replace(['No Data','Suppressed'], numpy.nan)
+fitpd = fitpd.dropna()
+Xdata = fitpd[['ID_r','Sugar', 'Obesity']]
+y = fitpd['Percentage']
+linmod = linear_model.LinearRegression()
+reg = linmod.fit(Xdata,y)
+plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'], label = ['Northeast','Southeast','West','Midwest'])
+plt.legend()
+print("Score: " + str(reg.score(Xdata,y)))
+```
+
