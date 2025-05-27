@@ -39,6 +39,7 @@ Please note that Mid-Atlantic states are split between the northeast and southea
 
 Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was only available from 2008-2020. The data from 2020 was not used due to possible influence from Covid-19 that may have reduced response in the states. In addition, for the ethnic groups, only the non-Hispanic white was near complete while the Non-Hispanic Asians, Non-Hispanic Blacks, and Hispanics have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
 </div>
+<div>
 # Results
 
 ## Animation
@@ -155,10 +156,12 @@ print("Score: " + str(reg.score(Xdata,y)))
 From the scatterplot, two conclusions are reached. The first is that the southeastern region of the nation appears to have generally higher obesity and diabetes rates for Non-Hispanic whites while the other regions do not have as high of rates despite outliers. In addition, there is a general correlation between the diabetes and obesity rates.
 
 However, the linear model was not a good fit for the data due to the low score value. The model could be improved if there was data on the total obesity rate for a state rather than just the obesity rate for the diabetic population.
-
-# Conclusions
+</div>
+<div>
+<h2> Conclusions</h2>
 
 From the results, the southeastern region of the U.S. has a higher rate of diabetes and high blood sugar. A linear model does not appear to be a good fit for the data. In the future, I would like to take the demographics of two states and compare to see the impact of composition on the diabetes rates. In the study, I found that ethnic groups are classified as one to many races together. As such, it was too difficult to pull the data from the Census site for easy processing.
+</div>
 
 # References
 
