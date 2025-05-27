@@ -1,19 +1,21 @@
 <!DOCTYPE html>
+<div>
 <h1>A Look into the Distribution of Diabetes in the United States</h1>
 <p>author: Catherine Cheu</p>
 <p>date: April 28, 2023 (Updated - May 23, 2025)</p>
+</div>
 <h2>Introduction</h2>
 
 <p>Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar in the blood [1]. This leads to many complications that can include amputation and death. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease and that diabetes is the seventh major cause of death in 2019 [2]. Despite its prevalence, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others [3]. The ADA also states that minorities have higher rates of diabetes.</p>
 
-There are many risk factors that can increase the chance of someone developing diabetes, including obesity, high blood sugar, and ethnicity. There are studies which look into how each factor can influence the rates of diabetes [4]. Learning how diabetes is distributed in the United States and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and better improve the effectiveness of the healthcare system.
+<p>There are many risk factors that can increase the chance of someone developing diabetes, including obesity, high blood sugar, and ethnicity. There are studies which look into how each factor can influence the rates of diabetes [4]. Learning how diabetes is distributed in the United States and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and better improve the effectiveness of the healthcare system.</p>
 
-In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes' rates in the states.
+<p>In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes' rates in the states.</p>
 
 ```{python echo = False}
 #Look into socioeconomic factors
 ```
-
+<div>
 # Methods
 
 ## Data Acquisition (Updated May 16, 2025)
@@ -36,7 +38,7 @@ print('Midwest: ', mw)
 Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states even though they are generally classified as separate regions. This allows for fewer classes that would need to be modeled against the data which would lead to less overfitting (?) of the data.
 
 Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was only available from 2008-2020. The data from 2020 was not used due to possible influence from Covid-19 that may have reduced response in the states. In addition, for the ethnic groups, only the non-Hispanic white was near complete while the Non-Hispanic Asians, Non-Hispanic Blacks, and Hispanics have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
-
+</div>
 # Results
 
 ## Animation
