@@ -180,7 +180,7 @@ However, the linear model was not a good fit for the data due to the low score v
 
 <h2>Code</h2>
 
-```{python echo = False}
+<p>```{python echo = False}
 #| output: False
 #| echo: True
 import geopandas, pandas, matplotlib, numpy, csv, glob, shapely, sklearn
@@ -278,5 +278,6 @@ plt.scatter(fitpd['NHW'],fitpd['Obesity'], c = fitpd['ID_r'], label = ['Northeas
 plt.legend()
 print("Score: " + str(reg.score(Xdata,y)))
 ```
+</p>
 
 </html>
