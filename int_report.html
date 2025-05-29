@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-<div>
-<h1>A Look into the Distribution of Diabetes in the United States</h1>
-<p>author: Catherine Cheu</p>
-<p>date: April 28, 2023 (Updated - May 26, 2025)</p>
-</div>
-<h2>Introduction</h2>
+<title>A Look into the Distribution of Diabetes in the United States</title>
+<h1>author: Catherine Cheu</h1>
+<h1>date: April 28, 2023 (Updated - May 29, 2025)</h1>
 
-<p>Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar in the blood [1]. This leads to many complications that can include amputation and death. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease and that diabetes is the seventh major cause of death in 2019 [2]. Despite its prevalence, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others [3]. The ADA also states that minorities have higher rates of diabetes.</p>
+<h1>Introduction</h1>
 
-<p>There are many risk factors that can increase the chance of someone developing diabetes, including obesity, high blood sugar, and ethnicity. There are studies which look into how each factor can influence the rates of diabetes [4]. Learning how diabetes is distributed in the United States and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and better improve the effectiveness of the healthcare system.</p>
+<p>Diabetes is a disease in which the body is unable to regulate blood sugar leading to high levels of sugar in the blood [1]. This leads to many complications that can include amputation and death. The American Diabetes Association (ADA) states that 37.3 million Americans have the disease and that diabetes is the seventh major cause of death in 2019 [2]. Despite its prevalence, the distribution of the disease is not evenly spread. In a study in 2011, the southeastern region of the U.S. had higher rates of diabetes than others [3]. The ADA also states that minorities have higher rates of diabetes.
 
-<p>In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes' rates in the states.</p>
+There are many risk factors that can increase the chance of someone developing diabetes, including obesity, high blood sugar, and ethnicity. There are studies which look into how each factor can influence the rates of diabetes [4]. Learning how diabetes is distributed in the United States and the possible reasons for the uneven distribution can help form policies to combat the rise of diabetes and better improve the effectiveness of the healthcare system.
+
+In this report, I will look at how the rates of diabetes has developed in the 2010s and to see how different factors affect its prevalence. This is done through a set of animations which will depict the evolution of diabetes in the nation. In addition, a linear regression model will be used to assess how different factors affect the diabetes' rates in the states.
+</p>
 
 ```{python echo = False}
 #Look into socioeconomic factors
 ```
-<div>
-# Methods
 
-## Data Acquisition (Updated May 16, 2025)
+<h1>Methods</h1>
 
-All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site [5]. The data is age-adjusted to only people at least 18 years old. The data used covers obesity rates, high test blood sugar rates, the diagnosed percentage of people who have diabetes in each state, and the percentage of people in an ethnic group in a state who have diabetes. The ethnic groups are Hispanic, Non-Hispanic white, Non-Hispanic black, and Non-Hispanic Asian.
+<h2>Data Acquisition (Updated May 16, 2025)</h2>
+
+<p>All diabetes rates are obtained from the Center of Disease Control and Prevention (CDC) Diabetes Survellence Survey site [5]. The data is age-adjusted to only people at least 18 years old. The data used covers obesity rates, high test blood sugar rates, the diagnosed percentage of people who have diabetes in each state, and the percentage of people in an ethnic group in a state who have diabetes. The ethnic groups are Hispanic, Non-Hispanic white, Non-Hispanic black, and Non-Hispanic Asian.
 
 The map is obtained through open source data in Kaggle [6]. Only the 50 states plus D.C. are displayed in the map, so the CDC data will be curated accordingly. The states are divided into four regions: Northeast, South, West, and Midwest. This is through the National Geographic classification which is as follows:
 
@@ -35,17 +35,17 @@ print('South: ', south)
 print('West: ', west)
 print('Midwest: ', mw)
 ```
+</p>
 
-Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states even though they are generally classified as separate regions. This allows for fewer classes that would need to be modeled against the data which would lead to less overfitting (?) of the data.
+<p>Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states even though they are generally classified as separate regions. This allows for fewer classes that would need to be modeled against the data which would lead to less overfitting (?) of the data.
 
 Diabetes data was analyzed for 2010-2019 as the high test blood sugar data was only available from 2008-2020. The data from 2020 was not used due to possible influence from Covid-19 that may have reduced response in the states. In addition, for the ethnic groups, only the non-Hispanic white was near complete while the Non-Hispanic Asians, Non-Hispanic Blacks, and Hispanics have too much missing data. As such, only the first two groups will be looked at. For the ethnic groups, we will look at how much of the population for each group has diabetes for every state. For obesity and blood sugar, the obesity data was polled from those with diabetes while the blood sugar was taken from people without diabetes. As such, some discrepancies may come from the results due to the same population not polled for both variables.
-</div>
-<div>
-# Results
+</p>
+<h1>Results</h1>
 
-## Animation
+<h2>Animation</h2>
 
-The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot. This could lead to states with no information to show as the highest levels of diabetes where they might not be. This may be due to limitations in matplotlib where the data with no information was being tried to be set as a different category in the colormaps. The animation can be played through the buttons at the bottom of the plots of this paper.
+<p>The following shows animations of diagnosed diabetes and high blood sugar in the U.S. Each frame is a year from 2010 - 2019. There were some missing data which appears as the highest color for the plot. This could lead to states with no information to show as the highest levels of diabetes where they might not be. This may be due to limitations in matplotlib where the data with no information was being tried to be set as a different category in the colormaps. The animation can be played through the buttons at the bottom of the plots of this paper.
 
 In the colormaps, the higher the value is, the darker the color the state would show. In this case, the states with higher percentages will show as more purple or pink than states with lower values. States with lower values will show as more cyan.
 
@@ -123,12 +123,12 @@ plt.close()
 print('Top: Percentage of People with Diabetes; Bottom: Percentage with High Blood Sugar')
 anim
 ```
+</p>
+<P>From the results, it can be seen that the southeastern region has higher rates of diabetes and people with high blood sugar. This is in line with the 2011 study where the southeastern region was found to have higher diabetes rates.
+</P>
+<h2>Linear Regression</h2>
 
-From the results, it can be seen that the southeastern region has higher rates of diabetes and people with high blood sugar. This is in line with the 2011 study where the southeastern region was found to have higher diabetes rates.
-
-## Linear Regression
-
-Linear regression was performed to see if obesity, high test blood sugar, and the states regions can be modeled against the diagnosed rates of diabetes for each state. For any row with missing values, it was dropped from the dataset. This leads to some years to not have much data since some variables have few states with data.
+<p>Linear regression was performed to see if obesity, high test blood sugar, and the states regions can be modeled against the diagnosed rates of diabetes for each state. For any row with missing values, it was dropped from the dataset. This leads to some years to not have much data since some variables have few states with data.
 
 The Non-Hispanic white rates of diabetes for every state was plotted against their corresponding obesity rates to see if there are any patterns. The points are color-coded by region, with 1 = Northeast, 2 = Southeastern, 3 = West, 4 = Midwest.
 
@@ -157,30 +157,28 @@ print("Score: " + str(reg.score(Xdata,y)))
 From the scatterplot, two conclusions are reached. The first is that the southeastern region of the nation appears to have generally higher obesity and diabetes rates for Non-Hispanic whites while the other regions do not have as high of rates despite outliers. In addition, there is a general correlation between the diabetes and obesity rates.
 
 However, the linear model was not a good fit for the data due to the low score value. The model could be improved if there was data on the total obesity rate for a state rather than just the obesity rate for the diabetic population.
-</div>
-<div>
-<h2> Conclusions</h2>
+</p>
+<h1>Conclusions</h1>
 
-From the results, the southeastern region of the U.S. has a higher rate of diabetes and high blood sugar. A linear model does not appear to be a good fit for the data. In the future, I would like to take the demographics of two states and compare to see the impact of composition on the diabetes rates. In the study, I found that ethnic groups are classified as one to many races together. As such, it was too difficult to pull the data from the Census site for easy processing.
-</div>
+<p>From the results, the southeastern region of the U.S. has a higher rate of diabetes and high blood sugar. A linear model does not appear to be a good fit for the data. In the future, I would like to take the demographics of two states and compare to see the impact of composition on the diabetes rates. In the study, I found that ethnic groups are classified as one to many races together. As such, it was too difficult to pull the data from the Census site for easy processing.
+</p>
+<h1>References</h1>
 
-# References
+<p>1. AlZu'bi, S.; Elbes, M.; Mughaid, A.; Bdair, N.; Abualigah, L.; Forestiero, A.; Zitar, R.A. Diabetes Monitoring Sytstem in Smart Health Cities Based on Big Data Intelligende. Future Internet 2023, 15, 85.</p>
 
-1. AlZu'bi, S.; Elbes, M.; Mughaid, A.; Bdair, N.; Abualigah, L.; Forestiero, A.; Zitar, R.A. Diabetes Monitoring Sytstem in Smart Health Cities Based on Big Data Intelligende. Future Internet 2023, 15, 85.
+<p>2. American Diabetes Association: Statistics About Data. https://diabetes.org/about-us/statistics/about-diabetes</p>
 
-2. American Diabetes Association: Statistics About Data. https://diabetes.org/about-us/statistics/about-diabetes
+<p>3. Barker, L.E.; Kirtland, K.A.; Gregg, E.W.; Geiss, L.S.; Thompson, T.J. Geographic Distribution of Diagnosed Diabetes in the U.S.: A Diabetes Belt. American Journal of Preventive Medicine. 2011. 40 (4). 434-439.</p>
 
-3. Barker, L.E.; Kirtland, K.A.; Gregg, E.W.; Geiss, L.S.; Thompson, T.J. Geographic Distribution of Diagnosed Diabetes in the U.S.: A Diabetes Belt. American Journal of Preventive Medicine. 2011. 40 (4). 434-439.
+<p>4. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk of diabetes. BMC Endocrine Disorders. 19.</p>
 
-4. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk of diabetes. BMC Endocrine Disorders. 19.
+<p>5. CDC Diabetes Data. https://gis.cdc.gov/grasp/diabetes/diabetesatlas-surveillance.html#</p>
 
-5. CDC Diabetes Data. https://gis.cdc.gov/grasp/diabetes/diabetesatlas-surveillance.html#
+<p>6. USA states GeoJson. Kaggle. https://www.kaggle.com/datasets/pompelmo/usa-states-geojson.</p>
 
-6. USA states GeoJson. Kaggle. https://www.kaggle.com/datasets/pompelmo/usa-states-geojson.
+<h1>Appendix</h1>
 
-# Appendix
-
-## Code
+<h2>Code</h2>
 
 ```{python echo = False}
 #| output: False
