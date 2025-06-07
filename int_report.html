@@ -27,7 +27,8 @@
 
 <p>The map is obtained through open source data in Kaggle [6]. Only the 50 states plus D.C. are displayed in the map, so the CDC data will be curated accordingly. The states are divided into four regions: Northeast, South, West, and Midwest. This is through the National Geographic classification which is as follows:</p>
 
-<p>```{python}
+<p>
+<py-script>
 ne = ['ME','VT','NH','CT','RI','MA','NY','PA','NJ']
 south = ['DC','VA','MD','DE','NC','SC','GA','FL','MS','MO','TN','KY','WV','AL','TX','AR','LA','OK']
 west = ['CA','WA','OR','ID','MT','CO','WY','UT','NV','AZ','NM','AK','HI']
@@ -36,7 +37,7 @@ print('Northeast: ', ne)
 print('South: ', south)
 print('West: ', west)
 print('Midwest: ', mw)
-```
+</py-script>
 </p>
 
 <p>Please note that Mid-Atlantic states are split between the northeast and southeast regions even though they are usually considered separate. In addition, Alaska and Hawaii are part of the western states even though they are generally classified as separate regions. This allows for fewer classes that would need to be modeled against the data which would lead to less overfitting (?) of the data.</p>
