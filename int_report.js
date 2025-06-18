@@ -1,3 +1,4 @@
+//with copilot
 function loadCSV(url) {
   return new Promise((resolve, reject) => {
     Papa.parse(url, {
