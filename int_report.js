@@ -16,7 +16,7 @@ function loadGeoJSON(url) {
 
 async function drawDiabetesMap(yearIndex = 0) {
   const geoData = await loadGeoJSON('data/us-states.json');
-  const years = Array.from({length: 10}, (_, i) => 2010 + i);
+  const years = Array.from({length: 10}, (_, i) => i);
   const diabetesFiles = years.map(y => `data/DiabetesAtlasData (${y}).csv`);
   const diabetesData = await Promise.all(diabetesFiles.map(loadCSV));
 
