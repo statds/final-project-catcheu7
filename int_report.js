@@ -38,7 +38,8 @@ async function drawDiabetesMap(yearIndex = 0) {
   }
 
   function style(feature) {
-    const stateData = diabetesData[yearIndex].find(d => d.State === feature.properties.name);
+    const stateName = abbrToStateName[feature.properties.abbr] || feature.properties.name;
+    const stateData = diabetesData[yearIndex].find(d => d.State === stateName);
     const perc = stateData ? parseFloat(stateData.Percentage) : null;
     return {
       fillColor: getColor(perc),
