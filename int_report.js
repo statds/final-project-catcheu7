@@ -56,17 +56,16 @@ const abbrToStateName = Object.fromEntries(
   }
 
   function style(feature) {
-    const stateName = abbrToStateName[feature.properties.abbr] || feature.properties.name;
-    const stateData = diabetesData[yearIndex].find(d => d.State === stateName);
-    const perc = stateData ? parseFloat(stateData.Percentage) : null;
-    return {
-      fillColor: getColor(perc),
-      weight: 2,
-      opacity: 1,
-      color: 'white',
-      fillOpacity: 0.7
-    };
-  }
+  const stateData = diabetesData[yearIndex].find(d => d.State === feature.properties.name);
+  const perc = stateData ? parseFloat(stateData.Percentage) : null;
+  return {
+    fillColor: getColor(perc),
+    weight: 2,
+    opacity: 1,
+    color: 'white',
+    fillOpacity: 0.7
+  };
+}
 
   L.geoJson(geoData, { style }).addTo(map);
 }
