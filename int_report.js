@@ -99,4 +99,5 @@ async function animateDiabetesMap() {
 }
 
 animateDiabetesMap();
+console.log([...new Set(validRows.map(d => d.State))]);
 
