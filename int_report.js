@@ -14,14 +14,20 @@ const stateNameToAbbr = {
 };
 
 function loadCSV(url) {
-  return new Promise((resolve, reject) => {
-    Papa.parse(url, {
-      download: true,
-      header: true,
-      complete: results => resolve(results.data),
-      error: err => reject(err)
+  return fetch(url)
+    .then(res => res.text())
+    .then(text => {
+      // Skip the first two lines (metadata), keep only the real CSV
+      const lines = text.split('\n').slice(2).join('\n');
+      return new Promise((resolve, reject) => {
+        Papa.parse(lines, {
+          header: true,
+          skipEmptyLines: true,
+          complete: results => resolve(results.data),
+          error: err => reject(err)
+        });
+      });
     });
-  });
 }
 
 function loadGeoJSON(url) {
