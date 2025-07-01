@@ -63,6 +63,21 @@ async function animateDiabetesMap() {
   };
   yearLabel.addTo(map);
 
+  // Add a legend
+  const legend = L.control({position: 'bottomright'});
+  legend.onAdd = function(map) {
+    const div = L.DomUtil.create('div', 'info legend');
+    const grades = [0, 2, 4, 6, 8, 10, 12, 14];
+    const labels = [];
+    for (let i = 0; i < grades.length; i++) {
+      div.innerHTML +=
+        '<i style="background:' + getColor(grades[i] + 0.1) + '"></i> ' +
+        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+    return div;
+  };
+  legend.addTo(map);
+
   function getColor(d) {
     return d > 14 ? '#800026' :
            d > 12 ? '#BD0026' :
