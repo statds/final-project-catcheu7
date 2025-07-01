@@ -34,8 +34,10 @@ async function animateDiabetesMap() {
   const diabetesFiles = years.map(y => `data/DiabetesAtlasData (${y}).csv`);
   const diabetesData = await Promise.all(diabetesFiles.map(loadCSV));
 
-  const validRows = diabetesData[0].filter(d => d.State && typeof d.State === "string" && d.State !== "State" && d.State !== "");
-  console.log("Valid state names in CSV:", [...new Set(validRows.map(d => d.State.trim()))]);
+  const validRows = diabetesData[0].filter(
+    d => d.State && typeof d.State === "string" && stateNameToAbbr.hasOwnProperty(d.State.trim())
+  );
+  console.log("All valid rows from CSV (first year):", validRows);
 
   const map = L.map('map').setView([37.8, -96], 4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -74,10 +76,16 @@ async function animateDiabetesMap() {
     const validRows = diabetesData[yearIndex].filter(
       d => d.State && typeof d.State === "string" && stateNameToAbbr.hasOwnProperty(d.State.trim())
     );
+
+    // Log what we're trying to match
+    console.log(`Looking for state: "${stateName}" (abbr: ${abbr}) in`, validRows.map(d => d.State.trim()));
+
     const stateData = validRows.find(d => d.State.trim() === stateName);
 
     if (!stateData) {
       console.log(`No data for: ${abbr} (${stateName})`);
+    } else {
+      console.log(`Matched data for: ${abbr} (${stateName})`, stateData);
     }
     const perc = stateData ? parseFloat(stateData.Percentage) : null;
     return {
