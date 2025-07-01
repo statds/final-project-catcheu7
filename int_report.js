@@ -34,6 +34,9 @@ async function animateDiabetesMap() {
   const diabetesFiles = years.map(y => `data/DiabetesAtlasData (${y}).csv`);
   const diabetesData = await Promise.all(diabetesFiles.map(loadCSV));
 
+  const validRows = diabetesData[0].filter(d => d.State && typeof d.State === "string" && d.State !== "State" && d.State !== "");
+  console.log("Unique state names in CSV:", [...new Set(validRows.map(d => d.State.trim()))]);
+
   const map = L.map('map').setView([37.8, -96], 4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 6,
@@ -99,5 +102,4 @@ async function animateDiabetesMap() {
 }
 
 animateDiabetesMap();
-console.log([...new Set(validRows.map(d => d.State))]);
 
