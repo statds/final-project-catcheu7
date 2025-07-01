@@ -68,12 +68,18 @@ async function animateDiabetesMap() {
   legend.onAdd = function(map) {
     const div = L.DomUtil.create('div', 'info legend');
     const grades = [0, 2, 4, 6, 8, 10, 12, 14];
-    const labels = [];
-    for (let i = 0; i < grades.length; i++) {
-      div.innerHTML +=
-        '<i style="background:' + getColor(grades[i] + 0.1) + '"></i> ' +
-        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
+    const colors = grades.map(g => getColor(g + 0.1));
+
+    // Create a color bar using a gradient
+    div.innerHTML += '<div style="width:160px;height:18px;background:linear-gradient(to right,'
+      + colors.join(',') +
+      ');margin-bottom:4px;border:1px solid #999"></div>';
+
+    // Add numeric labels under the color bar
+    div.innerHTML += '<div style="display:flex;justify-content:space-between;font-size:12px;">' +
+      grades.map(g => `<span>${g}</span>`).join('') +
+      '<span>+</span></div>';
+
     return div;
   };
   legend.addTo(map);
