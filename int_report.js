@@ -35,7 +35,7 @@ async function animateDiabetesMap() {
   const diabetesData = await Promise.all(diabetesFiles.map(loadCSV));
 
   const validRows = diabetesData[0].filter(d => d.State && typeof d.State === "string" && d.State !== "State" && d.State !== "");
-  console.log("Unique state names in CSV:", [...new Set(validRows.map(d => d.State.trim()))]);
+  console.log("Valid state names in CSV:", [...new Set(validRows.map(d => d.State.trim()))]);
 
   const map = L.map('map').setView([37.8, -96], 4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -69,9 +69,13 @@ async function animateDiabetesMap() {
   function style(feature, yearIndex) {
     const abbr = feature.id;
     const stateName = Object.keys(stateNameToAbbr).find(name => stateNameToAbbr[name] === abbr);
-    // Only use rows with a valid State property
-    const validRows = diabetesData[yearIndex].filter(d => d.State && typeof d.State === "string");
+
+    // Only use rows with a valid State property that matches the lookup table
+    const validRows = diabetesData[yearIndex].filter(
+      d => d.State && typeof d.State === "string" && stateNameToAbbr.hasOwnProperty(d.State.trim())
+    );
     const stateData = validRows.find(d => d.State.trim() === stateName);
+
     if (!stateData) {
       console.log(`No data for: ${abbr} (${stateName})`);
     }
