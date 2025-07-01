@@ -50,7 +50,11 @@ async function animateDiabetesMap() {
   }
 
   function style(feature, yearIndex) {
-    const stateData = diabetesData[yearIndex].find(d => d.State === feature.properties.name);
+    const stateName = feature.properties.name;
+    const stateData = diabetesData[yearIndex].find(d => d.State === stateName);
+    if (!stateData) {
+      console.log(`No data for: ${stateName}`);
+    }
     const perc = stateData ? parseFloat(stateData.Percentage) : null;
     return {
       fillColor: getColor(perc),
