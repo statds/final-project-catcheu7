@@ -65,9 +65,10 @@ async function animateDiabetesMap() {
 
   function style(feature, yearIndex) {
     const abbr = feature.id;
-    // Find the state name that matches this abbreviation
     const stateName = Object.keys(stateNameToAbbr).find(name => stateNameToAbbr[name] === abbr);
-    const stateData = diabetesData[yearIndex].find(d => d.State.trim() === stateName);
+    // Only use rows with a valid State property
+    const validRows = diabetesData[yearIndex].filter(d => d.State && typeof d.State === "string");
+    const stateData = validRows.find(d => d.State.trim() === stateName);
     if (!stateData) {
       console.log(`No data for: ${abbr} (${stateName})`);
     }
