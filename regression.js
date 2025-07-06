@@ -18,7 +18,7 @@ async function runAllYearsRegression() {
 
   // Change these if your column names are different
   const diabetesCol = "Percentage";
-  const obesityCol = "Obesity";
+  const obesityCol = "Percentage";
 
   // Prepare regression data for each year
   const regressions = years.map((year, idx) => {
