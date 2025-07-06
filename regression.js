@@ -12,7 +12,7 @@ async function loadCSV(url) {
 }
 
 async function runAllYearsRegression() {
-  const years = Array.from({length: 10}, (_, i) => 2010 + i);
+  const years = Array.from({length: 10}, (_, i) => i);
   const diabetesFiles = years.map(y => `data/DiabetesAtlasData (${y}).csv`);
   const allData = await Promise.all(diabetesFiles.map(loadCSV));
 
