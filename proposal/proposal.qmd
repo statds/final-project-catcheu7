@@ -1,0 +1,61 @@
+---
+title: Diabetes and Obesity
+author: Catherine Cheu
+date: March 24, 2023
+---
+
+# Introduction
+
+Diabetes is widespread in the United States, but government data indicates that some states having higher incident rates than others.
+Studies such as one in 2019 by Liu et al. correlated risk factors such as obesity of patients against the incidence rates.
+A state's demographics could amplify risk factors which can increase the rates of diabetes. Understanding the interactions between demographics and risk factors can better prepare policies to mitigate and prevent diabetes from rising in the country.
+
+# Specific Aims
+
+The overarching question for this proposal is: How the demographics and the risk factors affecting diabetes in the United States?
+
+This will be broken into two parts:
+
+1. How is diabetes occur across the states? Are there any differences across regions?
+
+2. Is obesity a significant factor in the incidence of diabetes in the states?
+
+While sugar is a major factor in diabetes, obesity could also produce co-morbid symptoms which may have diabetes. As such, it may be beneficial to see beyond sugar intake of what can influence diabetes.
+
+# Data Description
+
+All incident rates for diabetes is at the state level from the Center of Disease Control and Prevention (CDC). This is yearly data and also can have risk factors such as obesity.
+The data spans from 2000 to 2020, but we will only look at data before 2019. In addition, we will only look for the 50 states so the 3 territories will not be used.
+
+For sugar intake, we will infer based on glucose levels self-reported to CDC. However, we can only use up to 2019 as the data may have been limited by the pandemic.
+
+The CDC also provides the incidence rates for four ethnic groups. These are Hispanic, non-Hispanic White, non-Hispanic Black, and non-Hispanic Asians.
+
+# Methods
+
+I will split the project into two methods. The first is to visualize the rates of diabetes and obesity in a map. The second is a linear regression which will observe if obesity is a significant risk factor for diabetes.
+
+Matplotlib and geopandas will be used to animate the yearly maps of the United States via color coding for each of the variables in analysis. 2000 - 2018 data will be used for the maps.
+
+For regresssion, the states are split into several regions. These are Northeast, South, Midwest, and West. For this project, Alaska and Hawaii are western states.
+
+Linear regression will then use diabetes rate as response variable and obesity and ethnic group composition as the quantitative variables. A table for p-values will be given as results to show whether obesity or any other variable was significant in diabetes rate.
+
+# Discussion
+
+Two ways of verifying obesity and diabetes rates can be found through the methods described above. The visualization provides a time-lapse into obesity and diabetes rates so that hot spots can be quickly discovered and the correlation could be more easily inferred.
+
+The linear regression will provide a more concrete answer in whether obesity is significant to diabetes rates as well as looking into the other variables for significance. I would also try to obtain relative amounts of how significant each variable is to see whether demographics could change the significance of obesity across the country.
+
+The results should corroborate with Liu et al. in that obesity should be a significant risk factor for diabetes rate. However, I would like to see if this is true for all years. Future regressions may have one year at a time in order to see how the significance changes over time.
+
+# Conclusion
+
+We have two methods presented which show how obesity could be correlated to diabetes. The evolution of obesity and diabetes in the United States can provide an interesting picture of how people could change in the country.
+I would like to compare two states with similar diabetes rates but different demographics and observe to see if obesity plays a role. However, maps will have to be produced to see any possible pairings.
+
+# References
+
+1. Liu, S., Gao, Y. Shen, Y. Zhang, M. Li, J. Sun, P. (2019). Application of three statistical mdels for predicting the risk of diabetes. BMC Endocrine Disorders. 19.
+
+2. CDC Diabetes Data. https://gis.cdc.gov/grasp/diabetes/diabetesatlas-surveillance.html#
